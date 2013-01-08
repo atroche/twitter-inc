@@ -1,0 +1,134 @@
+#header #logo {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#header #logo h1 {
+  font-size: 40pt;
+  text-align: center;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+
+#hero ul {
+  margin-left:auto;
+  margin-right: -30px;
+  top: 200px;
+  padding: 50px 0 0px;
+  width: 363px;
+  position: relative;
+  z-index: 101;
+}
+#hero ul li {
+  list-style: none;
+  float: left;
+}
+#hero ul li a.get-started {
+  background-color: #F5E78B;
+  -webkit-transition: background-color 0.1s ease-out, color 0.1s ease-out;
+  -moz-transition: background-color 0.1s ease-out, color 0.1s ease-out;
+  -o-transition: background-color 0.1s ease-out, color 0.1s ease-out;
+  transition: background-color 0.1s ease-out, color 0.1s ease-out;
+  -webkit-transition: background-color 0.1s ease-out, color 0.1s ease-out;
+  -moz-transition: background-color 0.1s ease-out, color 0.1s ease-out;
+  -o-transition: background-color 0.1s ease-out, color 0.1s ease-out;
+  transition: background-color 0.1s ease-out, color 0.1s ease-out;
+  padding: 12px 40px 11px;
+  color: black;
+  font-family: "proxima-nova", sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 600;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  cursor: pointer;
+  padding: 19px 30px 16px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  background: #fff186;
+  margin-left: 2px;
+}
+#hero ul li a.get-started:hover {
+  background-color: #f2e9ad;
+}
+#hero ul li a.get-started:hover {
+  background: #fff;
+}
+
+ul.simple-steps {
+
+}
+
+
+.comments img {
+
+}
+
+#mainContent #tour .tour-row article h1 {
+  font-size: 28px;
+  letter-spacing: 1px;
+  line-height: 40px;
+  margin: 0 0 26px 0;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: relative;
+}
+
+#mainContent #tour .tour-row article h1.centered {
+  margin: 0 auto;
+  text-align: center;
+}
+
+p.right-content {
+  float: right;
+  width: 40%;
+  margin-top: 200px;
+}
+
+#tour .tour-row h1,
+#tour .tour-row h2 {
+  color: #222;
+  /*border-bottom: 1px solid #e2e2e2*/
+}
+
+#follower-count {
+  font-size: 32pt;
+  color: #222;
+}
+
+#follower-legend {
+  font-size: 20pt;
+  color: #777;
+}
+
+#falls-caption {
+  margin-top: 100px;
+  left: 20%;
+}
+
+/*
+#good-tweet {
+  left: 30%;
+  position: relative;
+}
+*/
+#endorsement {
+  margin-top: 150px;
+  font-size: 20pt;
+  font-weight: bold;
+  font-style: italic;
+  color: #222;
+}
+
+
+#endorsement small {
+  font-size: 14pt;
+  color: #222;
+  font-style: normal;
+}
+
+#endorsement img {
+  width: 50px;
+  margin-bottom: 10px;
+}

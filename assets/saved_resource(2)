@@ -1,0 +1,152 @@
+/* Host: nyc-webster3 Request Version: 12232012020414 Local Version: 12232012020414 Served from: LOCAL */ 
+YUI.add("squarespace-gallery",function(b){b.namespace("Squarespace");
+var a=false;
+b.augment(b.Node,Class.create({outerWidth:function(c){var e=parseFloat(this.getComputedStyle("marginLeft"));
+var d=parseFloat(this.getComputedStyle("marginRight"));
+return this.get("offsetWidth")+e+d
+},outerHeight:function(c){var d=parseFloat(this.getComputedStyle("marginTop"));
+var e=parseFloat(this.getComputedStyle("marginBottom"));
+return this.get("offsetHeight")+d+e
+}}));
+b.Squarespace.Gallery=Class.create({defaultOpts:{previous:false,next:false,itemSelector:false,startIndex:0,loop:false,design:"off",designOptions:{},autoplay:false,autoplayOptions:{timeout:1000,resumeAfter:1000,randomize:false},currentIndex:false,totalSlides:false,linked:false,keyboard:{previous:"down:37",next:"down:39"},renderWithCanvas:false,nextGeneration:false,loaderOptions:{},updateContainerHeight:false,focusOnClick:false},getContainer:function(){return this.elems.container
+},getSlide:function(c){return this.elems.slides.item(c)
+},getCurrentSlide:function(){return this.elems.slides.item(this.data.currentIndex)
+},getCurrentSlideId:function(){return this.getCurrentSlide().getAttribute("data-slide-id")||this.data.currentIndex
+},getSlides:function(){return this.elems.slides
+},initialize:function(i){if(b.Lang.isBoolean(i.keyboard)&&i.keyboard){delete i.keyboard
+}this.params=b.merge(this.defaultOpts,i);
+this.elems={};
+var c=b.one(this.params.slideshowElement);
+if(b.Lang.isNull(c)){throw new Error("No gallery '"+this.params.slideshowElement+"' container found.")
+}var h=(this.params.itemSelector?c.all(this.params.itemSelector):c.get("children"));
+this.elems.container=c;
+this.elems.slides=h;
+if(this.getContainer().getData("galleryInstance")){this.getContainer().getData("galleryInstance")._debug.warn("This node already has a gallery instance binded. Enhance your chill.");
+return
+}this._debug=new b.Squarespace.Debugger({name:"Gallery",uid:true});
+this.getContainer().setData("galleryInstance",this);
+this.history=new b.HistoryHash();
+if(this.params.historyHash||this.history.get("itemId")){this.history=new b.HistoryHash();
+var e=this.history.get("itemId")||this.history.get(this.params.historyHash);
+var d;
+if(e){this.elems.slides.each(function(k,l){if(k.getAttribute("data-slide-id")==e){d=l
+}});
+if(!b.Lang.isNumber(d)){d=parseInt(this.history.get(this.params.historyHash),10)
+}if(!!this.history.get("itemId")){this.history.replaceValue("itemId",null)
+}if(b.Lang.isNumber(d)){this.params.startIndex=d
+}}}this.data={currentIndex:this.params.startIndex,totalSlides:h.size()};
+this.events=[];
+if(this.data.totalSlides<=0){return false
+}if(!b.Squarespace.GalleryDesigns[this.params.design]){var j=[];
+for(var f in b.Squarespace.GalleryDesigns){j.push(f)
+}throw new Error("Design '"+this.params.design+"' not found. Currently loaded designs: ["+j.join(", ")+"].")
+}this.design=new (b.Squarespace.GalleryDesigns[this.params.design])();
+this.design.gallery=this;
+this.design.options=b.merge(this.design.options,this.params.designOptions);
+if(this.params.previous){this.events.push(b.all(this.params.previous).on("click",function(k){k.halt();
+this.previousSlide()
+},this))
+}if(this.params.next){this.events.push(b.all(this.params.next).on("click",function(k){k.halt();
+this.nextSlide()
+},this))
+}if(this.params.focusOnClick){h.each(function(k){k.on("click",function(){this.fire("changeIndex",h.indexOf(k))
+},this)
+},this)
+}if(this.params.keyboard){var g=function(){if(this.params.keyboardWhenInFrame){return this.getContainer().inRegion(b.one(this.params.keyboardWhenInFrame).get("region"))
+}return true
+};
+if(this.params.keyboard.previous){this.events.push(b.on("key",function(){if(!g.call(this)){return
+}this.previousSlide()
+},window,this.params.keyboard.previous,this))
+}if(this.params.keyboard.next){this.events.push(b.on("key",function(){if(!g.call(this)){return
+}this.nextSlide()
+},window,this.params.keyboard.next,this))
+}}if(this.params.linked){b.Array.each(this.params.linked,function(k){this.linkGallery(k)
+},this)
+}this.setup();
+this.fire("changeIndex",this.params.startIndex);
+this.isInitialized=true
+},linkGallery:function(c){function d(e,f){if(e){this._changeIndex(f)
+}b.Array.each(this.elems.linked,function(g){if(e!=g){g._changeIndex(f)
+}})
+}if(!this.elems.linked){this.on("changeIndex",function(e){d.call(this,false,e)
+},this);
+this.elems.linked=[]
+}this.elems.linked.push(c);
+c.on("changeIndex",function(e){d.call(this,c,e)
+},this)
+},setup:function(){this.on("changeIndex",this._changeIndex);
+this.loadSlides();
+this.design.setup(this.elems.container,this.elems.slides);
+if(this.params.autoplay){var c=this;
+setInterval(function(){if(c.params.autoplayOptions.randomize){var d=Math.ceil(Math.random()*c.data.totalSlides);
+while(d==c.data.currentIndex){d=Math.ceil(Math.random()*c.data.totalSlides)
+}c.fire("changeIndex",d)
+}else{c.nextSlide()
+}},this.params.autoplayOptions.timeout)
+}if(a){console.log("Y.Squarespace.Gallery.setup",[this.params,this.data,this.elems])
+}if(!!this.params.updateContainerHeight){this.on("changeIndex",this.updateContainerHeight)
+}},getSlideDimension:function(c,g){var e=this.elems.slides.item(c);
+var f=e;
+if(e.one("img,canvas")){f=e.one("img,canvas")
+}if(f&&e.getStyle("display")=="inline"){e=f
+}var d=(g=="width"?"offsetWidth":"offsetHeight");
+if(f.loader){if(!f.loader.get("loaded")){return f.loader.getDimensionForValue(g,e.get(g=="width"?"offsetHeight":"offsetWidth"))
+}else{return f.loader.get("node").get(d)
+}}else{return e.get(d)
+}},updateContainerHeight:function(){var e={container:this.elems.container};
+if(b.Lang.isObject(this.params.updateContainerHeight)){e=b.merge(e,this.params.updateContainerHeight)
+}var c=this.getSlideDimension(this.data.currentIndex,"height");
+if(e.maxHeight&&c>e.maxHeight){c=e.maxHeight
+}var d=b.all(e.container);
+if(e.anim&&this._updateContainerHeightRanOnce){d.each(function(f){f.anim({},b.merge({to:{height:c},duration:0.3,easing:b.Easing.easeOutStrong},e.anim)).run()
+})
+}else{d.setStyles({height:c})
+}this._updateContainerHeightRanOnce=true
+},previousSlide:function(){var c=this.data.currentIndex-1;
+if(c<0&&!this.params.loop){return
+}this.fire("changeIndex",c)
+},nextSlide:function(){var c=this.data.currentIndex+1;
+if(c>=this.data.totalSlides&&!this.params.loop){return
+}this.fire("changeIndex",c)
+},beforeChange:function(c){if(!this.params.loop){if(this.params.next){if(c.toIndex>=this.data.totalSlides-1){b.all(this.params.next).addClass("disabled")
+}else{b.all(this.params.next).removeClass("disabled")
+}}if(this.params.previous){if(c.toIndex<=0){b.all(this.params.previous).addClass("disabled")
+}else{b.all(this.params.previous).removeClass("disabled")
+}}}this.fire("before-change",c)
+},afterChange:function(c){if(this.params.currentIndex||this.params.totalSlides){b.all(this.params.currentIndex).each(function(d){d.set("innerHTML",this.data.currentIndex+1)
+},this);
+b.all(this.params.totalSlides).each(function(d){d.set("innerHTML",this.data.totalSlides)
+},this)
+}if(this.params.historyHash){this.history.replaceValue(this.params.historyHash,this.getCurrentSlideId())
+}this.fire("after-change",c)
+},changeIndex:function(c){this.fire("changeIndex",c)
+},_changeIndex:function(d){if(b.Lang.isObject(d)){return
+}if(!this.params.loop){if(d<0){d=0
+}if(d>=this.data.totalSlides){d=this.data.totalSlides-1
+}}if(d<0){d=this.data.totalSlides+d
+}if(this.isInitialized&&this.data.currentIndex==d){return
+}if(a){console.log("Y.Squarespace.Gallery.changeIndex",[d])
+}var e=this.data.currentIndex;
+var k=d%this.data.totalSlides;
+var j=this.elems.slides;
+var h=(e===this.data.totalSlides-1&&k===0);
+var f=(e===0&&k===this.data.totalSlides-1);
+var g;
+if((e<k&&!h&&!f)||(e>k&&h&&!f)){g="fwd"
+}else{if((e>k&&!f)||(e<k&&f)){g="rev"
+}}var c={fromIndex:e,toIndex:k,direction:g};
+this.beforeChange(c);
+j.filter(".active").removeClass("active");
+j.item(k).addClass("active");
+this.fire("change",c);
+this.data.currentIndex=k;
+this.afterChange(c)
+},loadSlides:function(d){var c=this.elems.container.all("img[data-image][data-image-dimensions][data-image-focal-point]");
+c.plug(b.Squarespace.Loader2,this.params.loaderOptions)
+}});
+b.augment(b.Squarespace.Gallery,b.EventTarget);
+b.Squarespace.GalleryDesigns={};
+b.Squarespace.GalleryDesigns.off=Class.create({gallery:false,options:{},beforeChange:function(c){},afterChange:function(c){},change:function(c,d){},setup:function(){},getGallery:function(){return this.gallery
+},events:[]})
+},"1.0",{requires:["node","event-key","squarespace-image-loader","squarespace-common","squarespace-ui-base","history"]});

@@ -1,0 +1,61 @@
+/* Host: nyc-webster2.int.peer1.squarespace.net Request Version: 12232012020414 Local Version: 12232012020414 Served from: LOCAL */ 
+Y.add("squarespace-simple-liking",function(a){a.Squarespace.SimpleLike={TEXT_LIKE_VERB_NONE:"No Likes",TEXT_LIKE_VERB_SINGULAR:"Like",TEXT_LIKE_VERB_PLURAL:"Likes",TEXT_LIKE_ACTIVATED:"You like this",TEXT_LIKE_SUGGEST:"Click to like",attached:false,attach:function(){if(this.attached){return
+}this.attached=true;
+var b;
+try{if(localStorage){b=a.JSON.parse(localStorage.getItem("squarespace-likes"));
+if(!b){b={}
+}localStorage.setItem("squarespace-likes",a.JSON.stringify(b))
+}}catch(c){b={}
+}a.delegate("click",function(g){var j=g.currentTarget;
+var h=j.getAttribute("data-item-id");
+if(!h){return
+}for(var f=0;
+f<5;
+++f){a.Squarespace.SimpleLike.burst(j)
+}if(j.hasClass("clicked")||j.hasClass("float")){return
+}var d=parseInt(j.getAttribute("data-like-count"),10);
+j.setAttribute("data-like-count",d+1);
+a.Squarespace.SimpleLike.renderLikeCount(j);
+j.addClass("clicked");
+try{if(localStorage){b[h]=true;
+localStorage.setItem("squarespace-likes",a.JSON.stringify(b))
+}}catch(g){console.warn("Unable to save like to local storage: ",g)
+}a.Data.post({url:"/api/comment/LikeContentItem",secure:true,data:{contentItemId:h}})
+},"body",".sqs-simple-like");
+a.all(".sqs-simple-like").each(function(e){var d=e.getAttribute("data-item-id");
+if(!d){return
+}if(!Static.SQUARESPACE_CONTEXT.websiteSettings.simpleLikingEnabled){e.remove()
+}if(b[d]){e.addClass("clicked")
+}a.Squarespace.SimpleLike.renderLikeCount(e)
+})
+},renderLikeCount:function(f){var e=f.getAttribute("data-item-id");
+var b=f.getAttribute("data-like-count");
+var d=f.one(".like-count");
+if(!e||!d){return
+}var c="";
+if(b===0){c=a.Squarespace.SimpleLike.TEXT_LIKE_VERB_NONE
+}else{if(b==1){c="1 "+a.Squarespace.SimpleLike.TEXT_LIKE_VERB_SINGULAR
+}else{c=b+" "+a.Squarespace.SimpleLike.TEXT_LIKE_VERB_PLURAL
+}}d.setContent(c)
+},burst:function(e){var d=e.cloneNode(true);
+if(d.one(".like-count")){d.one(".like-count").remove()
+}var c=e.one(".like-icon");
+if(!c){c=e
+}d.setStyles({position:"absolute",left:c.getX()+"px",top:c.getY()+"px"});
+a.one(document.body).append(d);
+var b=new a.Anim({node:d,duration:2,easing:a.Easing.easeOut});
+b.set("to",{curve:a.Squarespace.SimpleLike.randomCurve(d)});
+b.on("end",function(){this.get("node").remove()
+});
+b.run();
+d.removeClass("clicked");
+d.addClass("float")
+},randomCurve:function(c){var j=[],b=3,e=30,k=((Math.floor(Math.random()*2))?1:-1),f=((Math.floor(Math.random()*2))?1:-1),h=c.getX(),g=c.getY();
+for(var d=0;
+d<b;
+++d){h+=Math.floor(Math.random()*e)*k;
+g+=Math.floor(Math.random()*e)*f;
+j.push([h,g])
+}return j
+}}
+},1,{requires:["anim","node","json"]});
