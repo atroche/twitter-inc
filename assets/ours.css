@@ -81,7 +81,7 @@ ul.simple-steps {
 p.right-content {
   float: right;
   width: 40%;
-  margin-top: 200px;
+  margin-top: 100px;
 }
 
 #tour .tour-row h1,
@@ -91,20 +91,27 @@ p.right-content {
 }
 
 #follower-count {
-  font-size: 32pt;
+  font-weight: bold;
+  font-size: 60pt;
   color: #222;
+  margin-bottom: 1em;
 }
 
 #follower-legend {
-  font-size: 20pt;
+  font-size: 60pt;
+  font-weight: 100;
   color: #777;
+  text-transform: uppercase;
 }
 
 #falls-caption {
   margin-top: 100px;
+  position: relative;
   left: 20%;
   font-size: 2em;
   line-height: 1.3em;
+  text-align: center;
+  width: 60%;
 }
 
 /*
