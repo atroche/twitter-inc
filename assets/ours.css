@@ -233,3 +233,12 @@ p#will-contact {
   background-color: #62DAEB;
   font-style: normal;
 }
+
+div.last {
+  background-color: black;
+  color: #EEE;
+}
+
+div.last h1 {
+  color: #EEE ! important;
+}
