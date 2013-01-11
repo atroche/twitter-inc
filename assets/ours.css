@@ -66,11 +66,12 @@ ul.simple-steps {
 }
 
 #mainContent #tour .tour-row article h1 {
-  font-size: 28px;
+  font-size: 32px;
+  color: black;
   letter-spacing: 1px;
   line-height: 40px;
   margin: 0 0 26px 0;
-  font-weight: 400;
+  font-weight: bold;
   text-transform: uppercase;
   position: relative;
 }
@@ -88,7 +89,7 @@ p.right-content {
 
 #tour .tour-row h1,
 #tour .tour-row h2 {
-  color: #222;
+  /*color: #222;*/
   /*border-bottom: 1px solid #e2e2e2*/
 }
 
@@ -105,6 +106,8 @@ p.right-content {
 #falls-caption {
   margin-top: 100px;
   left: 20%;
+  font-size: 2em;
+  line-height: 1.3em;
 }
 
 /*
@@ -119,6 +122,7 @@ p.right-content {
   font-weight: bold;
   font-style: italic;
   color: #222;
+  line-height: 1.3em;
 }
 
 
@@ -131,4 +135,101 @@ p.right-content {
 #endorsement img {
   width: 50px;
   margin-bottom: 10px;
+}
+
+/* Heading underline */
+
+#mainContent #tour .tour-row article header h1:after {
+  content: '';
+  width: 304px;
+  height: 2px;
+  display: block;
+  background-color: #62DAEB;
+  position: absolute;
+  bottom: -10px;
+}
+
+article.how-it-works {
+  min-height: 83em;
+}
+
+article.how-it-works h2 {
+  font-size: 2em;
+}
+
+article.how-it-works img {
+  width: 45%;
+}
+
+article.how-it-works div.info {
+  width: 40%;
+  clear: both;
+  margin-top: 1em;
+}
+
+article.how-it-works div.info p {
+  font-style: italic;
+  font-size: 1.5em;
+  font-family: serif;
+  line-height: 1.3em;
+}
+
+article.how-it-works div.info h2 {
+  text-transform: uppercase;
+  color: #62DAEB;
+  margin-top: 2em;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+div.copy {
+  font-size: 2.5em;
+  line-height: 1.4em;
+  margin-top: 100px;
+}
+
+ul#features {
+  float: left;
+  list-style: none;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+div#price {
+  float: right;
+  font-style: italic;
+  font-size: 3em;
+  font-family: serif;
+  line-height: 1em;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+div#price small {
+  font-size: .7em;
+}
+
+p#will-contact {
+  clear: both;
+  font-size: .5em;
+  margin-left: 30%;
+  margin-top: 100px;
+  position: relative;
+  top: 50px;
+}
+
+#get-started {
+  font-size: .4em;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  padding: 0px 20px 0px 20px;
+  background-color: #62DAEB;
+  font-style: normal;
 }

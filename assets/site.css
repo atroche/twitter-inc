@@ -5341,7 +5341,6 @@ body.collection-layout-site-secondary .main-content-wrapper {
   width: 151px;
   height: 227px;
 }
-#mainContent #tour .tour-row article header h1,
 #mainContent #tour .tour-row article.blogs .col-third h2,
 #mainContent #tour .tour-row article.social .details h2 {
   font-size: 28px;
@@ -5352,17 +5351,7 @@ body.collection-layout-site-secondary .main-content-wrapper {
   text-transform: uppercase;
   position: relative;
 }
-#mainContent #tour .tour-row article header h1:after,
-#mainContent #tour .tour-row article.blogs .col-third h2:after,
-#mainContent #tour .tour-row article.social .details h2:after {
-  content: '';
-  width: 304px;
-  height: 2px;
-  display: block;
-  background-color: #222;
-  position: absolute;
-  bottom: -10px;
-}
+
 #mainContent #tour .tour-row article header h1.centered-fettuccine:after,
 #mainContent #tour .tour-row article.blogs .col-third h2.centered-fettuccine:after,
 #mainContent #tour .tour-row article.social .details h2.centered-fettuccine:after {
