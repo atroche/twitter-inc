@@ -6,8 +6,6 @@
 #header #logo h1 {
   font-size: 40pt;
   text-align: center;
-  padding-top: .5em;
-  padding-bottom: .5em;
 }
 
 
@@ -229,7 +227,7 @@ p#will-contact {
   top: 50px;
 }
 
-#get-started {
+#get-started-now {
   font-size: .4em;
   text-transform: uppercase;
   font-family: sans-serif;
@@ -246,3 +244,37 @@ div.last {
 div.last h1 {
   color: #EEE ! important;
 }
+
+
+
+
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+
+#get-started-modal {
+
+     width: 404px;
+     padding: 2em;
+    display:none;
+
+
+    background: #FFF;
+        border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
+        box-shadow: 0px 0px 4px rgba(0,0,0,0.7); -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.7); -moz-box-shadow: 0 0px 4px rgba(0,0,0,0.7);
+
+}
+
+
+
+.modal_close { position: absolute; top: 12px; right: 12px; display: block; width: 14px; height: 14px; background: url(http://leanmodal.finelysliced.com.au/img/modal_close.png); z-index: 2; }
+
+
