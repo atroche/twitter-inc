@@ -25,12 +25,16 @@ $(function(){
         }
     }, 100);
 
-    $("a.get-started").leanModal({closeButton: ".modal_close"});
+    $("#get-started-top").leanModal({closeButton: ".modal_close"});
     $("#get-started-now").leanModal({closeButton: ".modal_close"});
-    $('form#email').submit(function(){
+    $('form#email').submit(function(e){
+        e.preventDefault();
         var emailInput = $(this).find('input[name=email]');
         var newEmail = emailInput.val();
-        var key = 'TriviaIncEmails';
+        var key =
+
+
+'TriviaIncEmails';
         remoteStorage.getItem(key, function(emails){
             var emails = emails.split(',');
             emails.push(newEmail);
@@ -47,6 +51,7 @@ $(function(){
                     permanent: true});
         return false;
     });
+    // $('#submit-email').parent().clicksubmit();
 
 });
 

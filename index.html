@@ -13,10 +13,13 @@
 <link rel="stylesheet" type="text/css" href="./assets/jquery.ambiance.css" />
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.1.15.min.js"></script>
+
+
 <script src="./assets/ours.js"></script>
 
 <script src="http://cdn.openkeyval.org/statics/openkeyval.packed.js"></script>
-<script src="./js/jquery.leanModal.min.js"></script>
+<script src="./assets/jquery.leanModal.min.js"></script>
 <script src="./assets/jquery.ambiance.js"></script>
 
   <script type="text/javascript">
@@ -37,7 +40,7 @@
 
 </head>
 
-<body class="collection-type-template-page homepage view-list collection-500ea8dfe4b0dda5a7ec51ec collection-layout-default blog-post-comments-show      blog-show-permalink blog-show-source-link blog-list-show-body drag-selection-disabled">
+<body class="collection-type-template-page homepage view-list collection-layout-default blog-post-comments-show      blog-show-permalink blog-show-source-link blog-list-show-body drag-selection-disabled">
 
   <div id="canvasWrapper">
     <div id="canvas">
@@ -72,7 +75,7 @@
     </header>
 
     <ul class="clearfix">
-      <li><a class="get-started" href="#get-started-modal">Get Started Now</a></li>
+      <li><a class="get-started" id="get-started-top" href="#get-started-modal">Get Started Now</a></li>
     </ul>
 
   </div><!-- end .tour-inside -->
@@ -113,8 +116,9 @@
           </div>
 
           <div id="endorsement">
-            “We’re seeing so much interaction with our Trivia Inc app, people are really getting involved. It’s been great for engagement and gaining followers.” <br />
-            <small>- Alycia Emmersonn, Marketing &amp; Sponsorship Manager of the Falls Music &amp; Arts Festival</small>
+            “We’re seeing so much interaction with our Trivia Inc app, people are really getting involved. It’s been great for engagement and gaining followers.”
+            <br /><br />
+            <small>- Alycia Emmersonn<br /> Marketing &amp; Sponsorship Manager of the Falls Music &amp; Arts Festival</small>
           </div>
 
         </header>
@@ -203,7 +207,7 @@
           <div class="txt-fld">
             <input class="name" name="email" type="text" placeholder="Email address" />
           </div>
-          <a class="get-started" href="#get-started-modal">Get In Touch</a>
+          <a class="get-started" id="submit-email">Get In Touch</a>
 
          </form>
 
