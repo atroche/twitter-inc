@@ -22,7 +22,7 @@
   list-style: none;
   float: left;
 }
-#hero ul li a.get-started {
+a.get-started {
   background-color: #62DAEB;
   -webkit-transition: background-color 0.1s ease-out, color 0.1s ease-out;
   -moz-transition: background-color 0.1s ease-out, color 0.1s ease-out;
@@ -228,6 +228,7 @@ p#will-contact {
 }
 
 #get-started-now {
+  cursor: pointer;
   font-size: .4em;
   text-transform: uppercase;
   font-family: sans-serif;
@@ -278,3 +279,16 @@ div.last h1 {
 .modal_close { position: absolute; top: 12px; right: 12px; display: block; width: 14px; height: 14px; background: url(http://leanmodal.finelysliced.com.au/img/modal_close.png); z-index: 2; }
 
 
+#get-started-modal input.name {
+  font-size: 24pt;
+  width: 100%;
+}
+
+
+#get-started-modal div.txt-fld {
+  margin-bottom: 4em;
+}
+
+#get-started-modal a.get-started-now {
+  margin-top: 1em;
+}

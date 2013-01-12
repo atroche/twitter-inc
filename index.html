@@ -10,12 +10,14 @@
 
 <link rel="stylesheet" type="text/css" href="./assets/site.css" />
 <link rel="stylesheet" type="text/css" href="./assets/ours.css" />
+<link rel="stylesheet" type="text/css" href="./assets/jquery.ambiance.css" />
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="./assets/ours.js"></script>
 
 <script src="http://cdn.openkeyval.org/statics/openkeyval.packed.js"></script>
 <script src="./js/jquery.leanModal.min.js"></script>
+<script src="./assets/jquery.ambiance.js"></script>
 
 
   <style type="text/css">.tk-proxima-nova{font-family:"proxima-nova",sans-serif;}</style><link rel="stylesheet" href="http://use.typekit.com/k/vtu3qar-d.css?3bb2a6e53c9684ffdc9a9bf11f5b2a623a5a2311fd229ac483f9f65ee4ef85883dc5d8ee262bd622e7c2e4f60112f2d17f9de3b1e24ed540097f947dca7d2b4e7b65c636abc44428b475e463786fa55cfcb47d8bdfedb142253ebabe25c5548e4924d39cda4e9f44e409cd88c7f991f2e9823d1e7cd293738a2c18980a685e01894df2f4b7900869bff8afa4ae0df2e50755e5269b67dc4e2fd04f1baffe29de184e8d1c7783bef3288baae35ef534"><script type="text/javascript">
@@ -164,12 +166,12 @@
         </ul>
         <div id="price">
           $99.00<br /><small>per month</small>
-          <div id="get-started-now">
+          <div id="get-started-now" href="#get-started-modal">
             Get Started Now
           </div>
         </div>
         <p id="will-contact">
-          A representative of Trivia Inc will contact you within 24 hours of purchase.
+          A representative of Trivia Inc will contact you within 24 hours
         </p>
       </div>
     </div>
@@ -201,12 +203,9 @@
         <form id="email" action="">
 
           <div class="txt-fld">
-            <label for="">Email address</label>
-            <input id="" name="email" type="text" />
+            <input class="name" name="email" type="text" placeholder="Email address" />
           </div>
-          <div class="btn-fld">
-            <button type="submit">Sign Up &raquo;</button>
-          </div>
+          <a class="get-started" href="#get-started-modal">Get In Touch</a>
 
          </form>
 

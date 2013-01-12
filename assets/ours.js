@@ -26,6 +26,7 @@ $(function(){
     }, 100);
 
     $("a.get-started").leanModal({closeButton: ".modal_close"});
+    $("#get-started-now").leanModal({closeButton: ".modal_close"});
     $('form#email').submit(function(){
         var emailInput = $(this).find('input[name=email]');
         var newEmail = emailInput.val();
@@ -37,6 +38,13 @@ $(function(){
         });
 
         emailInput.val('');
+
+        $('#lean_overlay').hide();
+        $("#get-started-modal").hide();
+        $.ambiance({message: "We'll be in touch shortly.",
+                    title: "Thanks!",
+                    type: "success",
+                    permanent: true});
         return false;
     });
 
