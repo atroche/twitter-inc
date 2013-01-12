@@ -241,20 +241,9 @@ td {
 /* ---------- _base.less ---------- */
 /*
  * z-index notes:
- * squarespace-block-control - 100000
  *
  */
-.squarespace-managed-ui {
-  font-family: 'proxima-nova', 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  line-height: normal;
-}
 /* --- global ui --------------------------------------------------------------------------------------------------------------------------- */
-.squarespace-selection {
-  background: rgba(0, 0, 0, 0.08);
-  border: solid 1px white;
-  position: absolute;
-  z-index: 99999999999;
-}
 body.drag-selecting,
 body.drag-selection-dragging {
   -webkit-user-select: none;
@@ -483,88 +472,7 @@ body.sqs-edit-mode .sqsp-chrome.left-aligned .sqsp-chrome-badge {
   -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 0 0 2px  #42b1ff;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 0 0 2px  #42b1ff;
 }
-.dialog-squarespace-signup input.saveAndClose,
-.dialog-squarespace-signup input[type="submit"].saveAndClose {
-  padding: 12px 26px !important;
-  font-size: 14px !important;
-  position: relative;
-  top: -7px;
-}
-.squarespace-signup-chrome {
-  cursor: pointer;
-}
-.squarespace-signup-chrome.hidden {
-  opacity: 0 !important;
-}
-.squarespace-signup-chrome .sqsp-chrome-text-primary {
-  padding-top: 11px;
-}
-.squarespace-signup-chrome .squarespace-signup-button {
-  cursor: pointer;
-  height: 50px;
-  width: 40px;
-  opacity: .6;
-}
-.squarespace-signup-chrome .squarespace-signup-button:hover {
-  opacity: 1;
-}
-.squarespace-signup-chrome .squarespace-signup-avatar {
-  height: 50px;
-  width: 60px;
-  -moz-border-radius: 3px 0 0 3px;
-  border-radius: 3px 0 0 3px;
-  background: transparent url('/universal/images-v6/configuration/manager-ss.png') center center no-repeat;
-}
-.squarespace-signup-chrome .squarespace-signup-about {
-  height: 50px;
-  padding-right: 40px;
-  padding-left: 0px;
-}
-.squarespace-signup-chrome .squarespace-signup-about .squarespace-signup-username {
-  color: #eee;
-  font-size: 13px;
-  font-weight: bold;
-  padding-top: 12px;
-}
-.squarespace-signup-chrome .squarespace-signup-about .squarespace-signup-description {
-  color: #999;
-  font-size: 10px;
-  padding-top: 1px;
-}
-.squarespace-signup-chrome .squarespace-signup-create {
-  display: none;
-  height: 50px;
-  width: 50px;
-}
-.squarespace-signup-chrome .squarespace-signup-tweak {
-  background: transparent url('/universal/images-v6/icons/icon-brush-16-light-2.png') 44% 50% no-repeat;
-  display: block;
-  height: 52px;
-  width: 54px;
-}
-.dialog-squarespace-signup .custom-field-description {
-  background: transparent;
-}
-.dialog-squarespace-signup .custom-field-description.big-signup-title {
-  font-size: 28px;
-  color: #fff;
-  padding-bottom: 15px;
-}
-.dialog-squarespace-signup .custom-field-description.big-signup-footer {
-  padding-left: 35px;
-  background: transparent url(/universal/images-v6/configuration/manager-ss.png) center left no-repeat;
-}
-.dialog-squarespace-signup .custom-field-description.big-signup-footer a {
-  color: #eee;
-  border-bottom: 1px dotted #555;
-}
-.dialog-squarespace-signup .custom-field-description.big-signup-footer a:hover {
-  color: #fff;
-  border-bottom: 1px dotted #aaa;
-}
-.dialog-squarespace-signup .custom-field-description.big-signup-footer strong {
-  color: #fff;
-}
+
 .sqsp-chrome-style-mode,
 .sqsp-chrome-edit-mode {
   padding-left: 15px;
@@ -593,15 +501,8 @@ html.no-csstransforms3d .sqsp-chrome-style-mode,
 html.no-csstransforms3d .sqsp-chrome-edit-mode {
   display: none;
 }
-html.no-csstransforms3d body.sqs-edit-mode .squarespace-login-chrome {
-  display: none !important;
-}
 html.no-csstransforms3d body.sqs-edit-mode .sqsp-chrome-edit-mode {
   display: block;
-}
-html.no-csstransforms3d body.sqs-style-mode .squarespace-signup-chrome,
-html.no-csstransforms3d body.sqs-style-mode .squarespace-login-chrome {
-  display: none !important;
 }
 html.no-csstransforms3d body.sqs-style-mode .sqsp-chrome-style-mode {
   display: block;
@@ -613,20 +514,14 @@ html.csstransforms3d .sqsp-chrome-edit-mode {
   -ms-transform: rotatex(-180deg);
   transform: rotatex(-180deg);
 }
-html.csstransforms3d body.sqs-edit-mode .squarespace-login-chrome {
-  -webkit-transform: rotatex(180deg);
-  -moz-transform: rotatex(180deg);
-  -ms-transform: rotatex(180deg);
-  transform: rotatex(180deg);
-}
 html.csstransforms3d body.sqs-edit-mode .sqsp-chrome-edit-mode {
   -webkit-transform: rotatex(0deg);
   -moz-transform: rotatex(0deg);
   -ms-transform: rotatex(0deg);
   transform: rotatex(0deg);
 }
-html.csstransforms3d body.sqs-style-mode .squarespace-signup-chrome,
-html.csstransforms3d body.sqs-style-mode .squarespace-login-chrome {
+html.csstransforms3d body.sqs-style-mode .other-signup-chrome,
+html.csstransforms3d body.sqs-style-mode .other-login-chrome {
   -webkit-transform: rotatex(180deg);
   -moz-transform: rotatex(180deg);
   -ms-transform: rotatex(180deg);
@@ -638,24 +533,24 @@ html.csstransforms3d body.sqs-style-mode .sqsp-chrome-style-mode {
   -ms-transform: rotatex(0deg);
   transform: rotatex(0deg);
 }
-.squarespace-login-chrome .sqsp-chrome-text {
+.other-login-chrome .sqsp-chrome-text {
   cursor: pointer;
 }
-.squarespace-login-chrome .login-chrome-buttons {
+.other-login-chrome .login-chrome-buttons {
   min-width: 8px;
 }
-.squarespace-login-chrome .login-chrome-buttons .chrome-button.login-chrome-edit {
+.other-login-chrome .login-chrome-buttons .chrome-button.login-chrome-edit {
   background: transparent url('/universal/images-v6/icons/icon-edit-16-light.png') center center no-repeat;
 }
-.squarespace-login-chrome .login-chrome-buttons .chrome-button.login-chrome-style {
+.other-login-chrome .login-chrome-buttons .chrome-button.login-chrome-style {
   margin-right: 4px;
   background: transparent url('/universal/images-v6/icons/icon-brush-16-light.png') center center no-repeat;
 }
-.squarespace-login-chrome .login-chrome-buttons .chrome-button.login-chrome-configure {
+.other-login-chrome .login-chrome-buttons .chrome-button.login-chrome-configure {
   margin-right: 14px;
   background: transparent url('/universal/images-v6/icons/icon-settings-15-light.png') center center no-repeat;
 }
-.squarespace-login-chrome .login-chrome-avatar {
+.other-login-chrome .login-chrome-avatar {
   cursor: pointer;
   display: inline-block;
   height: 50px;
@@ -669,20 +564,20 @@ html.csstransforms3d body.sqs-style-mode .sqsp-chrome-style-mode {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.squarespace-login-chrome .overlay {
+.other-login-chrome .overlay {
   position: absolute;
   bottom: 0px;
   right: 0px;
   height: 16px;
   width: 16px;
 }
-.squarespace-login-chrome .overlay.twitter {
+.other-login-chrome .overlay.twitter {
   background: transparent url('/universal/images-v6/social/twitter_16.png') center center no-repeat;
 }
-.squarespace-login-chrome .overlay.facebook {
+.other-login-chrome .overlay.facebook {
   background: transparent url('/universal/images-v6/social/facebook_16.png') center center no-repeat;
 }
-.squarespace-login-chrome .overlay.google {
+.other-login-chrome .overlay.google {
   background: transparent url('/universal/images-v6/social/google_16.png') center center no-repeat;
 }
 @-webkit-keyframes spin-frames {
@@ -706,7 +601,7 @@ html.csstransforms3d body.sqs-style-mode .sqsp-chrome-style-mode {
   }
 }
 /* --- signup chrome ------------------------------------------------------------------------------------------------------------------------ */
-.squarespace-signup-text {
+.other-signup-text {
   font-family: 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #fff;
   width: 250px;
@@ -716,7 +611,7 @@ html.csstransforms3d body.sqs-style-mode .sqsp-chrome-style-mode {
   font-size: 14px;
   padding-bottom: 100px;
 }
-.squarespace-signup-spinner {
+.other-signup-spinner {
   background: transparent url('/universal/images-v6/big-gear.png') center center no-repeat;
   height: 200px;
   width: 200px;
@@ -728,12 +623,12 @@ html.csstransforms3d body.sqs-style-mode .sqsp-chrome-style-mode {
   -webkit-animation-name: spin-frames;
   -moz-animation-name: spin-frames;
 }
-.squarespace-signup-spinner.stopped {
+.other-signup-spinner.stopped {
   -webkit-animation-name: stopped;
   -moz-animation-name: stopped;
 }
 /* --- widget controls ------------------------------------------------------------------------------------------------------------------------ */
-.squarespace-block-control {
+.other-block-control {
   position: absolute;
   z-index: 90000;
   opacity: 0;
@@ -745,29 +640,29 @@ html.csstransforms3d body.sqs-style-mode .sqsp-chrome-style-mode {
   background-image: -webkit-linear-gradient(#282828, #0e0e0e);
   background-image: linear-gradient(#282828, #0e0e0e);
 }
-.squarespace-block-control.outer {
+.other-block-control.outer {
   -moz-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;
 }
-.squarespace-block-control.inner {
+.other-block-control.inner {
   -moz-border-radius: 0 0 0 3px;
   border-radius: 0 0 0 3px;
 }
-.squarespace-block-control.bottom {
+.other-block-control.bottom {
   -moz-border-radius: 0 0 3px 3px;
   border-radius: 0 0 3px 3px;
 }
-.squarespace-block-control .add-widget,
-.squarespace-block-control .configure-widget,
-.squarespace-block-control .remove-widget,
-.squarespace-block-control .configure-container,
-.squarespace-block-control .configure-grid {
+.other-block-control .add-widget,
+.other-block-control .configure-widget,
+.other-block-control .remove-widget,
+.other-block-control .configure-container,
+.other-block-control .configure-grid {
   float: left;
   height: 40px;
   width: 40px;
   background: transparent none center no-repeat;
 }
-.squarespace-block-control .configure-widget {
+.other-block-control .configure-widget {
   background-image: url(/universal/images-v6/normal/widget-configure.png);
 }
 /* --- drag/drop ------------------------------------------------------------------------------------------------------------------------ */
@@ -775,10 +670,10 @@ html.csstransforms3d body.sqs-style-mode .sqsp-chrome-style-mode {
   visibility: hidden;
 }
 /* --- Template Previewing -------------------------------------------------------------------------------------------------------------- */
-body.sqs-style-mode .squarespace-preview-chrome {
+body.sqs-style-mode .other-preview-chrome {
   left: 235px;
 }
-.squarespace-preview-chrome {
+.other-preview-chrome {
   position: fixed;
   z-index: 90000;
   bottom: 10px;
@@ -799,12 +694,12 @@ body.sqs-style-mode .squarespace-preview-chrome {
   color: #fff;
   font-size: 12px;
 }
-.squarespace-preview-chrome p {
+.other-preview-chrome p {
   font-size: inherit;
   line-height: 1.68em;
   margin-bottom: 0;
 }
-.squarespace-preview-chrome .squarespace-preview-title {
+.other-preview-chrome .other-preview-title {
   font-weight: bold;
   line-height: 27px;
   position: relative;
@@ -814,7 +709,7 @@ body.sqs-style-mode .squarespace-preview-chrome {
   background-position: 0px 7px;
   padding-left: 25px;
 }
-.squarespace-preview-chrome .squarespace-preview-title .go-back {
+.other-preview-chrome .other-preview-title .go-back {
   position: absolute;
   top: 0;
   right: 0;
@@ -824,41 +719,41 @@ body.sqs-style-mode .squarespace-preview-chrome {
   text-indent: -9999em;
   cursor: pointer;
 }
-.squarespace-preview-chrome .squarespace-preview-title .squarespace-preview-select {
+.other-preview-chrome .other-preview-title .other-preview-select {
   display: inline-block;
   text-indent: 3px;
 }
-.squarespace-preview-chrome .squarespace-preview-select {
+.other-preview-chrome .other-preview-select {
   position: relative;
 }
-.squarespace-preview-chrome .squarespace-preview-select select {
+.other-preview-chrome .other-preview-select select {
   position: absolute;
   top: 0;
   left: -5px;
   opacity: 0;
   width: 100%;
 }
-.squarespace-preview-chrome .squarespace-preview-select select.visible {
+.other-preview-chrome .other-preview-select select.visible {
   opacity: 1;
 }
-.squarespace-preview-chrome .pill-controls {
+.other-preview-chrome .pill-controls {
   margin-left: 30px;
   float: right;
   text-align: right;
 }
-.squarespace-preview-chrome .pill-controls .cancel,
-.squarespace-preview-chrome .pill-controls .button {
+.other-preview-chrome .pill-controls .cancel,
+.other-preview-chrome .pill-controls .button {
   display: inline-block !important;
   text-decoration: none !important;
   text-transform: none !important;
 }
-.squarespace-preview-chrome .pill-controls .cancel {
+.other-preview-chrome .pill-controls .cancel {
   line-height: 28px;
   font-size: 11px;
   margin-right: 10px;
   color: white;
 }
-.squarespace-preview-chrome .pill-controls .button {
+.other-preview-chrome .pill-controls .button {
   display: inline-block;
   cursor: pointer;
   -moz-border-radius: 20px;
@@ -878,14 +773,14 @@ body.sqs-style-mode .squarespace-preview-chrome {
   font: 400 11px / 14px 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
   text-shadow: 0 -1px 0 #000000;
 }
-.squarespace-preview-chrome .pill-controls .button a {
+.other-preview-chrome .pill-controls .button a {
   padding: 7px 15px 7px;
   display: inline-block;
   color: #eee;
   text-decoration: none !important;
   border-bottom: 0;
 }
-.squarespace-preview-chrome .pill-controls .button:hover {
+.other-preview-chrome .pill-controls .button:hover {
   background-color: #3b3b3b;
   background-image: -o-linear-gradient(#484848, #2e2e2e);
   background-image: -moz-linear-gradient(#484848, #2e2e2e);
@@ -893,10 +788,10 @@ body.sqs-style-mode .squarespace-preview-chrome {
   background-image: -webkit-linear-gradient(#484848, #2e2e2e);
   background-image: linear-gradient(#484848, #2e2e2e);
 }
-.squarespace-preview-chrome .pill-controls .button:hover a {
+.other-preview-chrome .pill-controls .button:hover a {
   color: #fff;
 }
-.squarespace-preview-chrome .pill-controls .button:active {
+.other-preview-chrome .pill-controls .button:active {
   background-color: #2e2e2e;
   background-image: -o-linear-gradient(#212121, #3b3b3b);
   background-image: -moz-linear-gradient(#212121, #3b3b3b);
@@ -904,7 +799,7 @@ body.sqs-style-mode .squarespace-preview-chrome {
   background-image: -webkit-linear-gradient(#212121, #3b3b3b);
   background-image: linear-gradient(#212121, #3b3b3b);
 }
-.squarespace-preview-chrome .pill-controls .button:focus {
+.other-preview-chrome .pill-controls .button:focus {
   outline: none;
   color: #dddddd;
   -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 0 0 2px  #42b1ff;
@@ -1017,7 +912,7 @@ body.sqs-style-mode .squarespace-preview-chrome {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* Squarespace Components */
+/* other Components */
 /*
 NOTE:  We add the .locked class to the parent container when doing the on-site render
 This is widget CSS -- import it from page-grid.less
@@ -1271,69 +1166,69 @@ This is widget CSS -- import it from page-grid.less
 .dialog-subscribe .body-block {
   height: 100px !important;
 }
-.squarespace-comments {
+.other-comments {
   margin-top: 30px;
 }
-.squarespace-comments .comment-preview-wrapper {
+.other-comments .comment-preview-wrapper {
   height: 0;
 }
-.squarespace-comments .comment-preview-wrapper.closed {
+.other-comments .comment-preview-wrapper.closed {
   overflow: hidden;
 }
-.squarespace-comments .comment-preview-wrapper.open {
+.other-comments .comment-preview-wrapper.open {
   overflow: visible;
 }
-.squarespace-comments .header-controls .controls {
+.other-comments .header-controls .controls {
   padding: 20px 0;
   overflow: hidden;
 }
-.squarespace-comments .header-controls .controls .comment-controls {
+.other-comments .header-controls .controls .comment-controls {
   float: right;
 }
-.squarespace-comments .header-controls .controls .comment-controls .comment-sort {
+.other-comments .header-controls .controls .comment-controls .comment-sort {
   position: relative;
   list-style-type: none;
   margin-right: 15px;
   display: inline-block;
 }
-.squarespace-comments .header-controls .controls .comment-controls .comment-sort .hidden-ordering {
+.other-comments .header-controls .controls .comment-controls .comment-sort .hidden-ordering {
   top: 0;
   left: 0;
 }
-.squarespace-comments .header-controls .controls .comment-controls .subscribe,
-.squarespace-comments .header-controls .controls .comment-controls .unsubscribe {
+.other-comments .header-controls .controls .comment-controls .subscribe,
+.other-comments .header-controls .controls .comment-controls .unsubscribe {
   cursor: pointer;
   display: inline-block;
 }
-.squarespace-comments .header-controls .controls .comment-count {
+.other-comments .header-controls .controls .comment-count {
   display: inline;
   margin: 0;
   float: left;
 }
-.squarespace-comments .new-comment-area {
+.other-comments .new-comment-area {
   margin-bottom: 15px;
   position: relative;
   -moz-border-radius: 3px;
   border-radius: 3px;
   background-color: white;
 }
-.squarespace-comments .new-comment-area .new-comment-title {
+.other-comments .new-comment-area .new-comment-title {
   font-size: 1.4em;
   margin-bottom: 15px;
 }
-.squarespace-comments .new-comment-area .squarespace-comment-login {
+.other-comments .new-comment-area .other-comment-login {
   float: right;
   font-size: 0.9em;
   cursor: pointer;
 }
-.squarespace-comments .new-comment-area .input {
+.other-comments .new-comment-area .input {
   border: 1px solid #eaeaea;
   border-color: rgba(0, 0, 0, 0.1);
   border-bottom-width: 0;
   -moz-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
 }
-.squarespace-comments .new-comment-area .input form.comment-form textarea {
+.other-comments .new-comment-area .input form.comment-form textarea {
   width: 100%;
   line-height: 1.5em;
   height: 140px;
@@ -1346,10 +1241,10 @@ This is widget CSS -- import it from page-grid.less
   resize: none;
   margin: 0;
 }
-.squarespace-comments .new-comment-area .input form.comment-form textarea:focus {
+.other-comments .new-comment-area .input form.comment-form textarea:focus {
   outline: 0;
 }
-.squarespace-comments .new-comment-area .comment-btn-wrapper {
+.other-comments .new-comment-area .comment-btn-wrapper {
   text-align: right;
   padding: 10px;
   border: 1px #eaeaea solid;
@@ -1359,10 +1254,10 @@ This is widget CSS -- import it from page-grid.less
   border-radius: 0 0 3px 3px;
   font-size: 12px;
 }
-.squarespace-comments .new-comment-area .comment-btn-wrapper .preview-comment {
+.other-comments .new-comment-area .comment-btn-wrapper .preview-comment {
   cursor: pointer;
 }
-.squarespace-comments .new-comment-area .comment-btn-wrapper .comment-btn {
+.other-comments .new-comment-area .comment-btn-wrapper .comment-btn {
   display: inline-block;
   background-color: #272727;
   color: #FFF;
@@ -1378,10 +1273,10 @@ This is widget CSS -- import it from page-grid.less
   line-height: 30px;
   position: relative;
 }
-.squarespace-comments .new-comment-area .comment-btn-wrapper .comment-btn.hasavatar {
+.other-comments .new-comment-area .comment-btn-wrapper .comment-btn.hasavatar {
   padding-left: 40px;
 }
-.squarespace-comments .new-comment-area .comment-btn-wrapper .comment-btn.hasavatar img {
+.other-comments .new-comment-area .comment-btn-wrapper .comment-btn.hasavatar img {
   height: 30px;
   position: absolute;
   -moz-border-radius: 2px 0 0 2px;
@@ -1389,27 +1284,27 @@ This is widget CSS -- import it from page-grid.less
   left: 0;
   top: 0;
 }
-.squarespace-comments .new-comment-area .comment-btn-wrapper .btn-text {
+.other-comments .new-comment-area .comment-btn-wrapper .btn-text {
   line-height: 30px;
   margin-right: 10px;
 }
-.squarespace-comments .new-comment-area .comment-btn-wrapper .edit-comment {
+.other-comments .new-comment-area .comment-btn-wrapper .edit-comment {
   display: none;
 }
-.squarespace-comments .new-comment-area.preview-mode .edit-comment {
+.other-comments .new-comment-area.preview-mode .edit-comment {
   display: inline;
 }
-.squarespace-comments .new-comment-area.preview-mode .preview-comment {
+.other-comments .new-comment-area.preview-mode .preview-comment {
   display: none;
 }
-.squarespace-comments .comments-content .comment-list .delete-anim-wrapper {
+.other-comments .comments-content .comment-list .delete-anim-wrapper {
   overflow: hidden;
   -webkit-transform: translatez(0);
   -moz-transform: translatez(0);
   -ms-transform: translatez(0);
   transform: translatez(0);
 }
-.squarespace-comments .comments-content .comment-list .reply-area-wrapper {
+.other-comments .comments-content .comment-list .reply-area-wrapper {
   height: 0;
   overflow: hidden;
   -webkit-transform: translatez(0);
@@ -1418,28 +1313,28 @@ This is widget CSS -- import it from page-grid.less
   transform: translatez(0);
   margin-left: 46px;
 }
-.squarespace-comments .comments-content .comment-list .reply-area-wrapper[data-depth="1"] {
+.other-comments .comments-content .comment-list .reply-area-wrapper[data-depth="1"] {
   margin-left: 95px;
 }
-.squarespace-comments .comments-content .comment-list .reply-area-wrapper[data-depth="2"] {
+.other-comments .comments-content .comment-list .reply-area-wrapper[data-depth="2"] {
   margin-left: 141px;
 }
-.squarespace-comments .comments-content .comment-list .reply-area-wrapper[data-depth="3"] {
+.other-comments .comments-content .comment-list .reply-area-wrapper[data-depth="3"] {
   margin-left: 187px;
 }
-.squarespace-comments .comments-content .comment-list .reply-area-wrapper[data-depth="4"] {
+.other-comments .comments-content .comment-list .reply-area-wrapper[data-depth="4"] {
   margin-left: 233px;
 }
-.squarespace-comments .comments-content .comment-list .reply-area-wrapper[data-depth="5"] {
+.other-comments .comments-content .comment-list .reply-area-wrapper[data-depth="5"] {
   margin-left: 279px;
 }
-.squarespace-comments .comments-content .comment-list .reply-area-wrapper[data-depth="6"] {
+.other-comments .comments-content .comment-list .reply-area-wrapper[data-depth="6"] {
   margin-left: 325px;
 }
-.squarespace-comments .comments-content .comment-list .reply-area-wrapper[data-depth="7"] {
+.other-comments .comments-content .comment-list .reply-area-wrapper[data-depth="7"] {
   margin-left: 371px;
 }
-.squarespace-comments .comments-content .comment-list .comment-preview-wrapper {
+.other-comments .comments-content .comment-list .comment-preview-wrapper {
   height: 0px;
   overflow: hidden;
   -webkit-transform: translatez(0);
@@ -1447,7 +1342,7 @@ This is widget CSS -- import it from page-grid.less
   -ms-transform: translatez(0);
   transform: translatez(0);
 }
-.squarespace-comments .comments-content .comment-list .comment {
+.other-comments .comments-content .comment-list .comment {
   margin-bottom: 30px;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
@@ -1456,158 +1351,158 @@ This is widget CSS -- import it from page-grid.less
   border-top: 1px solid #DDD;
   border-color: rgba(0, 0, 0, 0.1);
 }
-.squarespace-comments .comments-content .comment-list .comment[data-depth="1"] {
+.other-comments .comments-content .comment-list .comment[data-depth="1"] {
   margin-left: 46px;
 }
-.squarespace-comments .comments-content .comment-list .comment[data-depth="2"] {
+.other-comments .comments-content .comment-list .comment[data-depth="2"] {
   margin-left: 92px;
 }
-.squarespace-comments .comments-content .comment-list .comment[data-depth="3"] {
+.other-comments .comments-content .comment-list .comment[data-depth="3"] {
   margin-left: 138px;
 }
-.squarespace-comments .comments-content .comment-list .comment[data-depth="4"] {
+.other-comments .comments-content .comment-list .comment[data-depth="4"] {
   margin-left: 184px;
 }
-.squarespace-comments .comments-content .comment-list .comment[data-depth="5"] {
+.other-comments .comments-content .comment-list .comment[data-depth="5"] {
   margin-left: 230px;
 }
-.squarespace-comments .comments-content .comment-list .comment[data-depth="6"] {
+.other-comments .comments-content .comment-list .comment[data-depth="6"] {
   margin-left: 276px;
 }
-.squarespace-comments .comments-content .comment-list .comment[data-depth="6"] .comment-control.reply {
+.other-comments .comments-content .comment-list .comment[data-depth="6"] .comment-control.reply {
   display: none;
 }
-.squarespace-comments .comments-content .comment-list .comment.pending-delete .comment-header .controls .comment-control {
+.other-comments .comments-content .comment-list .comment.pending-delete .comment-header .controls .comment-control {
   display: none;
 }
-.squarespace-comments .comments-content .comment-list .comment.pending {
+.other-comments .comments-content .comment-list .comment.pending {
   opacity: 0.5;
 }
-.squarespace-comments .comments-content .comment-list .comment.pending .comment-header .reply,
-.squarespace-comments .comments-content .comment-list .comment.pending .comment-header .like,
-.squarespace-comments .comments-content .comment-list .comment.pending .comment-header .flag,
-.squarespace-comments .comments-content .comment-list .comment.pending .comment-header .delete,
-.squarespace-comments .comments-content .comment-list .comment.pending .comment-header .approve {
+.other-comments .comments-content .comment-list .comment.pending .comment-header .reply,
+.other-comments .comments-content .comment-list .comment.pending .comment-header .like,
+.other-comments .comments-content .comment-list .comment.pending .comment-header .flag,
+.other-comments .comments-content .comment-list .comment.pending .comment-header .delete,
+.other-comments .comments-content .comment-list .comment.pending .comment-header .approve {
   display: none;
 }
-.squarespace-comments .comments-content .comment-list .comment.unmoderated {
+.other-comments .comments-content .comment-list .comment.unmoderated {
   opacity: 0.7;
 }
-.squarespace-comments .comments-content .comment-list .comment.unmoderated .comment-header .controls .squarespace-comment-buttons .reply,
-.squarespace-comments .comments-content .comment-list .comment.unmoderated .comment-header .controls .squarespace-comment-buttons .like,
-.squarespace-comments .comments-content .comment-list .comment.unmoderated .comment-header .controls .squarespace-comment-buttons .flag {
+.other-comments .comments-content .comment-list .comment.unmoderated .comment-header .controls .other-comment-buttons .reply,
+.other-comments .comments-content .comment-list .comment.unmoderated .comment-header .controls .other-comment-buttons .like,
+.other-comments .comments-content .comment-list .comment.unmoderated .comment-header .controls .other-comment-buttons .flag {
   display: none;
 }
-.squarespace-comments .comments-content .comment-list .comment:not(.unmoderated) .comment-header .unmoderated-text {
+.other-comments .comments-content .comment-list .comment:not(.unmoderated) .comment-header .unmoderated-text {
   display: none;
 }
-.squarespace-comments .comments-content .comment-list .comment:not(.unmoderated) .comment-header .controls .squarespace-comment-buttons .approve {
+.other-comments .comments-content .comment-list .comment:not(.unmoderated) .comment-header .controls .other-comment-buttons .approve {
   display: none;
 }
-.squarespace-comments .comments-content .comment-list .comment.liked .comment-header .controls .squarespace-comment-buttons .like {
+.other-comments .comments-content .comment-list .comment.liked .comment-header .controls .other-comment-buttons .like {
   background-image: url(/universal/images-v6/comments/icon_like_12_light.png);
   background-color: #222;
   background-color: rgba(0, 0, 0, 0.7);
   opacity: 1;
 }
-.squarespace-comments .comments-content .comment-list .comment.liked .comment-header .controls .squarespace-comment-buttons .reply,
-.squarespace-comments .comments-content .comment-list .comment.liked .comment-header .controls .squarespace-comment-buttons .delete {
+.other-comments .comments-content .comment-list .comment.liked .comment-header .controls .other-comment-buttons .reply,
+.other-comments .comments-content .comment-list .comment.liked .comment-header .controls .other-comment-buttons .delete {
   opacity: 1;
 }
-.squarespace-comments .comments-content .comment-list .comment.liked .comment-header .controls .squarespace-comment-buttons .flag {
+.other-comments .comments-content .comment-list .comment.liked .comment-header .controls .other-comment-buttons .flag {
   display: none;
 }
-.squarespace-comments .comments-content .comment-list .comment.flagged .comment-header .controls .squarespace-comment-buttons .flag {
+.other-comments .comments-content .comment-list .comment.flagged .comment-header .controls .other-comment-buttons .flag {
   background-image: url(/universal/images-v6/comments/icon_flag_12_light.png);
   background-color: #222;
   background-color: rgba(0, 0, 0, 0.7);
   opacity: 1;
 }
-.squarespace-comments .comments-content .comment-list .comment.flagged .comment-header .controls .squarespace-comment-buttons .reply,
-.squarespace-comments .comments-content .comment-list .comment.flagged .comment-header .controls .squarespace-comment-buttons .delete,
-.squarespace-comments .comments-content .comment-list .comment.flagged .comment-header .controls .squarespace-comment-buttons .approve {
+.other-comments .comments-content .comment-list .comment.flagged .comment-header .controls .other-comment-buttons .reply,
+.other-comments .comments-content .comment-list .comment.flagged .comment-header .controls .other-comment-buttons .delete,
+.other-comments .comments-content .comment-list .comment.flagged .comment-header .controls .other-comment-buttons .approve {
   opacity: 1;
 }
-.squarespace-comments .comments-content .comment-list .comment.flagged .comment-header .controls .squarespace-comment-buttons .like {
+.other-comments .comments-content .comment-list .comment.flagged .comment-header .controls .other-comment-buttons .like {
   display: none;
 }
-.squarespace-comments .comments-content .comment-list .comment.loading {
+.other-comments .comments-content .comment-list .comment.loading {
   opacity: 0;
 }
-.squarespace-comments .comments-content .comment-list .comment:first-child {
+.other-comments .comments-content .comment-list .comment:first-child {
   border: none;
 }
-.squarespace-comments .comments-content .comment-list .comment.comment-preview {
+.other-comments .comments-content .comment-list .comment.comment-preview {
   opacity: 0.4;
   -webkit-transition: opacity 0.2s ease-out;
   -moz-transition: opacity 0.2s ease-out;
   -o-transition: opacity 0.2s ease-out;
   transition: opacity 0.2s ease-out;
 }
-.squarespace-comments .comments-content .comment-list .comment.comment-preview:hover .comment-header .controls {
+.other-comments .comments-content .comment-list .comment.comment-preview:hover .comment-header .controls {
   display: none;
 }
-.squarespace-comments .comments-content .comment-list .comment.after-preview,
-.squarespace-comments .comments-content .comment-list .comment:hover .comment-header .controls .squarespace-comment-buttons .comment-control {
+.other-comments .comments-content .comment-list .comment.after-preview,
+.other-comments .comments-content .comment-list .comment:hover .comment-header .controls .other-comment-buttons .comment-control {
   opacity: 1;
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-header {
+.other-comments .comments-content .comment-list .comment .comment-header {
   padding: 15px 0 15px 49px;
   min-height: 34px;
   position: relative;
   overflow: hidden;
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-header .user-info {
+.other-comments .comments-content .comment-list .comment .comment-header .user-info {
   margin-right: 123px;
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-header .user-info .avatar {
+.other-comments .comments-content .comment-list .comment .comment-header .user-info .avatar {
   width: 34px;
   height: 34px;
   float: left;
   margin-left: -49px;
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-header .user-info .avatar img {
+.other-comments .comments-content .comment-list .comment .comment-header .user-info .avatar img {
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-header .user-info .author {
+.other-comments .comments-content .comment-list .comment .comment-header .user-info .author {
   font-size: 1.3em;
   line-height: 34px;
   margin-right: 10px;
   font-weight: 700;
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-header .user-info .date {
+.other-comments .comments-content .comment-list .comment .comment-header .user-info .date {
   font-size: 0.8em;
   line-height: 34px;
   display: inline-block;
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-header .user-info .posting-text {
+.other-comments .comments-content .comment-list .comment .comment-header .user-info .posting-text {
   font-size: 0.8em;
   margin-left: 10px;
   line-height: 34px;
   display: none;
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-header .user-info .posting-text.visible {
+.other-comments .comments-content .comment-list .comment .comment-header .user-info .posting-text.visible {
   display: inline;
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-header .user-info .likes {
+.other-comments .comments-content .comment-list .comment .comment-header .user-info .likes {
   font-size: 0.8em;
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-header .controls {
+.other-comments .comments-content .comment-list .comment .comment-header .controls {
   height: 34px;
   position: absolute;
   right: 0px;
   top: 15px;
   line-height: 34px;
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-header .controls span {
+.other-comments .comments-content .comment-list .comment .comment-header .controls span {
   display: inline-block;
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-header .controls .squarespace-comment-buttons {
+.other-comments .comments-content .comment-list .comment .comment-header .controls .other-comment-buttons {
   color: #9D9D9D;
   color: rgba(0, 0, 0, 0.5);
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-header .controls .squarespace-comment-buttons .comment-control {
+.other-comments .comments-content .comment-list .comment .comment-header .controls .other-comment-buttons .comment-control {
   -webkit-transform: translatez(0);
   -moz-transform: translatez(0);
   -ms-transform: translatez(0);
@@ -1629,93 +1524,93 @@ This is widget CSS -- import it from page-grid.less
   -o-transition: all 0.12s ease-out;
   transition: all 0.12s ease-out;
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-header .controls .squarespace-comment-buttons .comment-control:hover {
+.other-comments .comments-content .comment-list .comment .comment-header .controls .other-comment-buttons .comment-control:hover {
   background-color: #222;
   background-color: rgba(0, 0, 0, 0.7);
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-header .controls .squarespace-comment-buttons .comment-control.approve {
+.other-comments .comments-content .comment-list .comment .comment-header .controls .other-comment-buttons .comment-control.approve {
   background-image: url(/universal/images-v6/comments/icon_check_12_light.png);
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-header .controls .squarespace-comment-buttons .comment-control.delete {
+.other-comments .comments-content .comment-list .comment .comment-header .controls .other-comment-buttons .comment-control.delete {
   background-image: url(/universal/images-v6/comments/icon_delete_12_light.png);
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-header .controls .squarespace-comment-buttons .comment-control.like {
+.other-comments .comments-content .comment-list .comment .comment-header .controls .other-comment-buttons .comment-control.like {
   background-image: url(/universal/images-v6/comments/icon_like_12_light.png);
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-header .controls .squarespace-comment-buttons .comment-control.flag {
+.other-comments .comments-content .comment-list .comment .comment-header .controls .other-comment-buttons .comment-control.flag {
   background-image: url(/universal/images-v6/comments/icon_flag_12_light.png);
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-header .controls .squarespace-comment-buttons .comment-control.reply {
+.other-comments .comments-content .comment-list .comment .comment-header .controls .other-comment-buttons .comment-control.reply {
   padding: 0;
   background-image: url(/universal/images-v6/comments/icon_reply_12_light.png);
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-header .controls .squarespace-comment-buttons .comment-control.flag-confirm {
+.other-comments .comments-content .comment-list .comment .comment-header .controls .other-comment-buttons .comment-control.flag-confirm {
   background-image: url(/universal/images-v6/comments/icon_flag_12_light.png);
   background-color: #222;
   background-color: rgba(0, 0, 0, 0.7);
   opacity: 1;
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-header .controls .squarespace-comment-buttons .comment-control.like-confirm {
+.other-comments .comments-content .comment-list .comment .comment-header .controls .other-comment-buttons .comment-control.like-confirm {
   background-image: url(/universal/images-v6/comments/icon_like_12_light.png);
   background-color: #222;
   background-color: rgba(0, 0, 0, 0.7);
   opacity: 1;
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-header .controls .squarespace-comment-buttons .comment-control.like-confirm + span,
-.squarespace-comments .comments-content .comment-list .comment .comment-header .controls .squarespace-comment-buttons .comment-control.flag-confirm + span {
+.other-comments .comments-content .comment-list .comment .comment-header .controls .other-comment-buttons .comment-control.like-confirm + span,
+.other-comments .comments-content .comment-list .comment .comment-header .controls .other-comment-buttons .comment-control.flag-confirm + span {
   background-color: #A3A3A3;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-header .controls .squarespace-comment-buttons .comment-control.like-confirm + span:hover,
-.squarespace-comments .comments-content .comment-list .comment .comment-header .controls .squarespace-comment-buttons .comment-control.flag-confirm + span:hover {
+.other-comments .comments-content .comment-list .comment .comment-header .controls .other-comment-buttons .comment-control.like-confirm + span:hover,
+.other-comments .comments-content .comment-list .comment .comment-header .controls .other-comment-buttons .comment-control.flag-confirm + span:hover {
   background-color: #222;
   background-color: rgba(0, 0, 0, 0.7);
 }
-.squarespace-comments .comments-content .comment-list .comment .comment-body {
+.other-comments .comments-content .comment-list .comment .comment-body {
   padding-left: 49px;
 }
-.squarespace-comments .comment-list.avatars-hidden .comment .comment-header {
+.other-comments .comment-list.avatars-hidden .comment .comment-header {
   padding: 15px 0;
 }
-.squarespace-comments .comment-list.avatars-hidden .comment .comment-body {
+.other-comments .comment-list.avatars-hidden .comment .comment-body {
   padding-left: 0;
 }
-.squarespace-comments .comment-list.avatars-hidden .comment .reply-area-wrapper {
+.other-comments .comment-list.avatars-hidden .comment .reply-area-wrapper {
   padding-left: 0;
 }
-.squarespace-comments .reply-to-text {
+.other-comments .reply-to-text {
   clear: left;
   font-size: 10px;
 }
-.squarespace-comments .load-more {
+.other-comments .load-more {
   text-align: center;
   color: #FFF;
   -moz-border-radius: 4px;
   border-radius: 4px;
   padding: 5px 0;
 }
-.squarespace-comments .reply-input {
+.other-comments .reply-input {
   width: 100%;
   background-color: #FFF;
   border: 1px solid #e0e0e0;
 }
-.squarespace-comments .btn-avatar {
+.other-comments .btn-avatar {
   height: 36px;
   width: 36px;
   float: left;
   cursor: pointer;
 }
-.squarespace-comments .comment-item {
+.other-comments .comment-item {
   list-style-type: none;
 }
-.squarespace-comments .reply-to-link {
+.other-comments .reply-to-link {
   margin-right: 10px;
   float: left;
   font-size: 10px;
   padding: 12px 0 0;
 }
-.squarespace-comments .hidden-ordering {
+.other-comments .hidden-ordering {
   opacity: 0;
   cursor: pointer;
   width: 130px;
@@ -1723,23 +1618,23 @@ This is widget CSS -- import it from page-grid.less
   top: 4px;
   left: 0;
 }
-.squarespace-comments .comment-header,
-.squarespace-comments .reply-area .comment-btn,
-.squarespace-comments .squarespace-comment-user-flyout .clearfix,
-.squarespace-comments .squarespace-comment-user-flyout .squarespace-comment-user-clearfix {
+.other-comments .comment-header,
+.other-comments .reply-area .comment-btn,
+.other-comments .other-comment-user-flyout .clearfix,
+.other-comments .other-comment-user-flyout .other-comment-user-clearfix {
   clear: both;
 }
-.squarespace-comments .comment-btn:hover,
-.squarespace-comments .squarespace-comments .comment-header .comment-control:hover {
+.other-comments .comment-btn:hover,
+.other-comments .other-comments .comment-header .comment-control:hover {
   background-color: #000;
 }
-.squarespace-comments .new-comment-avatar img,
-.squarespace-comments .squarespace-comments .reply-area .input .reply-avatar img {
+.other-comments .new-comment-avatar img,
+.other-comments .other-comments .reply-area .input .reply-avatar img {
   height: 36px;
   width: 36px;
 }
-.squarespace-comments .view-more-btn,
-.squarespace-comments .full-view-btn {
+.other-comments .view-more-btn,
+.other-comments .full-view-btn {
   cursor: pointer;
   color: #FFF;
   text-align: center;
@@ -1751,7 +1646,7 @@ This is widget CSS -- import it from page-grid.less
 }
 /* User Info Box
 *********************************************/
-.squarespace-comment-user-flyout {
+.other-comment-user-flyout {
   position: absolute;
   width: 710px;
   overflow: hidden;
@@ -1761,35 +1656,35 @@ This is widget CSS -- import it from page-grid.less
   border-radius: 10px;
   padding: 31px 35px;
 }
-.squarespace-comment-user-flyout .squarespace-user-info {
+.other-comment-user-flyout .other-user-info {
   width: 40%;
   height: 100%;
   float: left;
   border-right: 2px solid #303030;
   padding-right: 28px;
 }
-.squarespace-comment-user-flyout .squarespace-user-info .user-info-header .avatar img {
+.other-comment-user-flyout .other-user-info .user-info-header .avatar img {
   height: 36px;
   width: 36px;
   -moz-border-radius: 3px;
   border-radius: 3px;
   float: left;
 }
-.squarespace-comment-user-flyout .squarespace-user-info .user-info-header .info {
+.other-comment-user-flyout .other-user-info .user-info-header .info {
   float: left;
   margin-left: 25px;
   margin-top: 7px;
 }
-.squarespace-comment-user-flyout .squarespace-user-info .user-info-header .info .name {
+.other-comment-user-flyout .other-user-info .user-info-header .info .name {
   color: #FFF;
   margin-bottom: 6px;
   font-weight: 700;
   font-size: 16px;
 }
-.squarespace-comment-user-flyout .squarespace-user-info .user-info-header .info a.website {
+.other-comment-user-flyout .other-user-info .user-info-header .info a.website {
   color: #7B7B7B;
 }
-.squarespace-comment-user-flyout .squarespace-user-info .user-info-body {
+.other-comment-user-flyout .other-user-info .user-info-body {
   padding-top: 25px;
   line-height: 17px;
   font-size: 11px;
@@ -1797,61 +1692,61 @@ This is widget CSS -- import it from page-grid.less
   color: #fff;
   clear: left;
 }
-.squarespace-comment-user-flyout .squarespace-user-info .user-social-opts {
+.other-comment-user-flyout .other-user-info .user-social-opts {
   margin-right: 38px;
 }
-.squarespace-comment-user-flyout .squarespace-user-info .user-social-opts .social-leftcol {
+.other-comment-user-flyout .other-user-info .user-social-opts .social-leftcol {
   float: left;
 }
-.squarespace-comment-user-flyout .squarespace-user-info .user-social-opts .social-widget {
+.other-comment-user-flyout .other-user-info .user-social-opts .social-widget {
   margin-bottom: 12px;
 }
-.squarespace-comment-user-flyout .squarespace-user-info .user-social-opts .social-widget a img.social-icon {
+.other-comment-user-flyout .other-user-info .user-social-opts .social-widget a img.social-icon {
   margin-right: 10px;
 }
-.squarespace-comment-user-flyout .squarespace-user-info .user-social-opts .social-widget a.social-name {
+.other-comment-user-flyout .other-user-info .user-social-opts .social-widget a.social-name {
   text-transform: capitalize;
   color: #fff;
   font-size: 12px;
 }
-.squarespace-comment-user-flyout .squarespace-user-activity {
+.other-comment-user-flyout .other-user-activity {
   float: left;
   margin-left: 33px;
   width: 50%;
 }
-.squarespace-comment-user-flyout .squarespace-user-activity .squarespace-activity-header .title {
+.other-comment-user-flyout .other-user-activity .other-activity-header .title {
   margin-bottom: 11px;
   font-size: 16px;
   font-weight: 700;
   color: #FFF;
 }
-.squarespace-comment-user-flyout .squarespace-user-activity .squarespace-activity-header .description {
+.other-comment-user-flyout .other-user-activity .other-activity-header .description {
   margin-bottom: 30px;
 }
-.squarespace-comment-user-flyout .squarespace-user-activity .feed .feed-item {
+.other-comment-user-flyout .other-user-activity .feed .feed-item {
   margin-bottom: 32px;
 }
-.squarespace-comment-user-flyout .squarespace-user-activity .feed .feed-item .type-icon {
+.other-comment-user-flyout .other-user-activity .feed .feed-item .type-icon {
   float: left;
   height: 65px;
   margin-right: 13px;
   display: inline;
 }
-.squarespace-comment-user-flyout .squarespace-user-activity .feed .feed-item .type-icon img {
+.other-comment-user-flyout .other-user-activity .feed .feed-item .type-icon img {
   display: inline;
 }
-.squarespace-comment-user-flyout .squarespace-user-activity .feed .feed-item .content {
+.other-comment-user-flyout .other-user-activity .feed .feed-item .content {
   color: #7B7B7B;
 }
-.squarespace-comment-user-flyout .squarespace-user-activity .feed .feed-item .content .header {
+.other-comment-user-flyout .other-user-activity .feed .feed-item .content .header {
   margin-bottom: 8px;
   font-size: 12px;
   color: #FFF;
 }
-.squarespace-comment-user-flyout .squarespace-user-activity .feed .feed-item .content .header .time {
+.other-comment-user-flyout .other-user-activity .feed .feed-item .content .header .time {
   font-size: 11px;
 }
-.squarespace-comment-user-flyout .squarespace-user-activity .feed .feed-item .content .body {
+.other-comment-user-flyout .other-user-activity .feed .feed-item .content .body {
   word-wrap: break-word;
   padding-left: 30px;
   font-size: 11px;
@@ -1867,56 +1762,56 @@ This is widget CSS -- import it from page-grid.less
   .header-controls .unsubscribe {
     float: right;
   }
-  .squarespace-comments .comments-content .comment-list .comment .comment-header .user-info {
+  .other-comments .comments-content .comment-list .comment .comment-header .user-info {
     margin-right: 0;
   }
-  .squarespace-comments .comments-content .comment-list .comment .comment-header .user-info .author,
-  .squarespace-comments .comments-content .comment-list .comment .comment-header .user-info .date,
-  .squarespace-comments .comments-content .comment-list .comment .comment-header .user-info .likes,
-  .squarespace-comments .comments-content .comment-list .comment .comment-header .user-info .posting-text {
+  .other-comments .comments-content .comment-list .comment .comment-header .user-info .author,
+  .other-comments .comments-content .comment-list .comment .comment-header .user-info .date,
+  .other-comments .comments-content .comment-list .comment .comment-header .user-info .likes,
+  .other-comments .comments-content .comment-list .comment .comment-header .user-info .posting-text {
     line-height: 1.3em;
   }
-  .squarespace-comments .comments-content .comment-list .comment .comment-header .user-info .author {
+  .other-comments .comments-content .comment-list .comment .comment-header .user-info .author {
     font-size: 1em;
     line-height: 1.3em;
     display: block;
   }
-  .squarespace-comments .comments-content .comment-list .comment .comment-header .controls {
+  .other-comments .comments-content .comment-list .comment .comment-header .controls {
     top: 6px;
   }
-  .squarespace-comments .comments-content .comment-list .reply-area-wrapper[data-depth="2"],
-  .squarespace-comments .comments-content .comment-list .reply-area-wrapper[data-depth="3"],
-  .squarespace-comments .comments-content .comment-list .reply-area-wrapper[data-depth="4"],
-  .squarespace-comments .comments-content .comment-list .reply-area-wrapper[data-depth="5"],
-  .squarespace-comments .comments-content .comment-list .reply-area-wrapper[data-depth="6"],
-  .squarespace-comments .comments-content .comment-list .reply-area-wrapper[data-depth="7"] {
+  .other-comments .comments-content .comment-list .reply-area-wrapper[data-depth="2"],
+  .other-comments .comments-content .comment-list .reply-area-wrapper[data-depth="3"],
+  .other-comments .comments-content .comment-list .reply-area-wrapper[data-depth="4"],
+  .other-comments .comments-content .comment-list .reply-area-wrapper[data-depth="5"],
+  .other-comments .comments-content .comment-list .reply-area-wrapper[data-depth="6"],
+  .other-comments .comments-content .comment-list .reply-area-wrapper[data-depth="7"] {
     margin-left: 79px;
   }
-  .squarespace-comments .comments-content .comment-list .comment[data-depth="1"],
-  .squarespace-comments .comments-content .comment-list .comment[data-depth="2"],
-  .squarespace-comments .comments-content .comment-list .comment[data-depth="3"],
-  .squarespace-comments .comments-content .comment-list .comment[data-depth="4"],
-  .squarespace-comments .comments-content .comment-list .comment[data-depth="5"],
-  .squarespace-comments .comments-content .comment-list .comment[data-depth="6"],
-  .squarespace-comments .comments-content .comment-list .comment[data-depth="7"] {
+  .other-comments .comments-content .comment-list .comment[data-depth="1"],
+  .other-comments .comments-content .comment-list .comment[data-depth="2"],
+  .other-comments .comments-content .comment-list .comment[data-depth="3"],
+  .other-comments .comments-content .comment-list .comment[data-depth="4"],
+  .other-comments .comments-content .comment-list .comment[data-depth="5"],
+  .other-comments .comments-content .comment-list .comment[data-depth="6"],
+  .other-comments .comments-content .comment-list .comment[data-depth="7"] {
     margin-left: 30px;
   }
-  .squarespace-comments .comments-content .comment-list .comment[data-depth="2"] .author:before {
+  .other-comments .comments-content .comment-list .comment[data-depth="2"] .author:before {
     content: "\00b7\00a0\00a0";
   }
-  .squarespace-comments .comments-content .comment-list .comment[data-depth="3"] .author:before {
+  .other-comments .comments-content .comment-list .comment[data-depth="3"] .author:before {
     content: "\00b7\00a0\00b7\00a0\00a0";
   }
-  .squarespace-comments .comments-content .comment-list .comment[data-depth="4"] .author:before {
+  .other-comments .comments-content .comment-list .comment[data-depth="4"] .author:before {
     content: "\00b7\00a0\00b7\00a0\00b7\00a0\00a0";
   }
-  .squarespace-comments .comments-content .comment-list .comment[data-depth="5"] .author:before {
+  .other-comments .comments-content .comment-list .comment[data-depth="5"] .author:before {
     content: "\00b7\00a0\00b7\00a0\00b7\00a0\00b7\00a0\00a0";
   }
-  .squarespace-comments .comments-content .comment-list .comment[data-depth="6"] .author:before {
+  .other-comments .comments-content .comment-list .comment[data-depth="6"] .author:before {
     content: "\00b7\00a0\00b7\00a0\00b7\00a0\00b7\00a0\00b7\00a0\00a0";
   }
-  .squarespace-comments .comments-content .comment-list .comment[data-depth="7"] .author:before {
+  .other-comments .comments-content .comment-list .comment[data-depth="7"] .author:before {
     content: "\00b7\00a0\00b7\00a0\00b7\00a0\00b7\00a0\00b7\00a0\00b7\00a0\00a0";
   }
 }
@@ -1927,14 +1822,14 @@ This is widget CSS -- import it from page-grid.less
 /* FONT FILES & FAMILY
 -------------------------------------------------*/
 @font-face {
-  font-family: 'squarespace-ui-font';
-  src: url('/universal/fonts/squarespace-ui-font.eot');
-  src: url('/universal/fonts/squarespace-ui-font.eot?#iefix') format('embedded-opentype'), url('/universal/fonts/squarespace-ui-font.svg#squarespace-ui-font') format('svg'), url('/universal/fonts/squarespace-ui-font.woff') format('woff'), url('/universal/fonts/squarespace-ui-font.ttf') format('truetype');
+  font-family: 'other-ui-font';
+  src: url('/universal/fonts/other-ui-font.eot');
+  src: url('/universal/fonts/other-ui-font.eot?#iefix') format('embedded-opentype'), url('/universal/fonts/other-ui-font.svg#other-ui-font') format('svg'), url('/universal/fonts/other-ui-font.woff') format('woff'), url('/universal/fonts/other-ui-font.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 .sqs-ui-font-family {
-  font-family: 'squarespace-ui-font';
+  font-family: 'other-ui-font';
   font-style: normal;
   speak: none;
   font-weight: normal;
@@ -1946,7 +1841,7 @@ This is widget CSS -- import it from page-grid.less
 -------------------------------------------------*/
 [class^="sqs-ui-font-"]:before,
 [class*=" sqs-ui-font-"]:before {
-  font-family: 'squarespace-ui-font';
+  font-family: 'other-ui-font';
   font-style: normal;
   speak: none;
   font-weight: normal;
@@ -1955,7 +1850,7 @@ This is widget CSS -- import it from page-grid.less
 /* USE FONT VIA [data-icon]
 -------------------------------------------------*/
 [data-icon]:before {
-  font-family: 'squarespace-ui-font';
+  font-family: 'other-ui-font';
   font-style: normal;
   speak: none;
   font-weight: normal;
@@ -2414,7 +2309,7 @@ This is widget CSS -- import it from page-grid.less
   right: 2%;
 }
 .yui3-lightbox2 .sqs-lightbox-next:before {
-  font-family: 'squarespace-ui-font';
+  font-family: 'other-ui-font';
   font-style: normal;
   speak: none;
   font-weight: normal;
@@ -2434,7 +2329,7 @@ This is widget CSS -- import it from page-grid.less
   left: 2%;
 }
 .yui3-lightbox2 .sqs-lightbox-previous:before {
-  font-family: 'squarespace-ui-font';
+  font-family: 'other-ui-font';
   font-style: normal;
   speak: none;
   font-weight: normal;
@@ -2950,7 +2845,7 @@ This is widget CSS -- import it from page-grid.less
 .sqs-layout .sqs-row [class*=sqs-col-] .sqs-block {
   padding-bottom: 24px;
 }
-body.squarespace-config .sqs-layout .sqs-row [class*=sqs-col-] .sqs-block {
+body.other-config .sqs-layout .sqs-row [class*=sqs-col-] .sqs-block {
   padding-top: 12px;
   padding-bottom: 12px;
 }
@@ -4005,14 +3900,14 @@ body.squarespace-config .sqs-layout .sqs-row [class*=sqs-col-] .sqs-block {
 -----------------------------------------------*//* FONT FILES & FAMILY
 -------------------------------------------------*/
 @font-face {
-  font-family: 'squarespace-ui-font';
-  src: url('/universal/fonts/squarespace-ui-font.eot');
-  src: url('/universal/fonts/squarespace-ui-font.eot?#iefix') format('embedded-opentype'), url('/universal/fonts/squarespace-ui-font.svg#squarespace-ui-font') format('svg'), url('/universal/fonts/squarespace-ui-font.woff') format('woff'), url('/universal/fonts/squarespace-ui-font.ttf') format('truetype');
+  font-family: 'other-ui-font';
+  src: url('/universal/fonts/other-ui-font.eot');
+  src: url('/universal/fonts/other-ui-font.eot?#iefix') format('embedded-opentype'), url('/universal/fonts/other-ui-font.svg#other-ui-font') format('svg'), url('/universal/fonts/other-ui-font.woff') format('woff'), url('/universal/fonts/other-ui-font.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 .sqs-ui-font-family {
-  font-family: 'squarespace-ui-font';
+  font-family: 'other-ui-font';
   font-style: normal;
   speak: none;
   font-weight: normal;
@@ -4024,7 +3919,7 @@ body.squarespace-config .sqs-layout .sqs-row [class*=sqs-col-] .sqs-block {
 -------------------------------------------------*/
 [class^="sqs-ui-font-"]:before,
 [class*=" sqs-ui-font-"]:before {
-  font-family: 'squarespace-ui-font';
+  font-family: 'other-ui-font';
   font-style: normal;
   speak: none;
   font-weight: normal;
@@ -4033,7 +3928,7 @@ body.squarespace-config .sqs-layout .sqs-row [class*=sqs-col-] .sqs-block {
 /* USE FONT VIA [data-icon]
 -------------------------------------------------*/
 [data-icon]:before {
-  font-family: 'squarespace-ui-font';
+  font-family: 'other-ui-font';
   font-style: normal;
   speak: none;
   font-weight: normal;
@@ -4051,7 +3946,7 @@ body.squarespace-config .sqs-layout .sqs-row [class*=sqs-col-] .sqs-block {
 }
 #list-paging a.newer .pagination-icon:before,
 #item-paging a.newer .pagination-icon:before {
-  font-family: 'squarespace-ui-font';
+  font-family: 'other-ui-font';
   font-style: normal;
   speak: none;
   font-weight: normal;
@@ -4077,7 +3972,7 @@ body.squarespace-config .sqs-layout .sqs-row [class*=sqs-col-] .sqs-block {
 }
 #list-paging a.older .pagination-icon:after,
 #item-paging a.older .pagination-icon:after {
-  font-family: 'squarespace-ui-font';
+  font-family: 'other-ui-font';
   font-style: normal;
   speak: none;
   font-weight: normal;
@@ -4152,11 +4047,11 @@ body.squarespace-config .sqs-layout .sqs-row [class*=sqs-col-] .sqs-block {
   display: inline-block;
   vertical-align: middle;
 }
-.like-share .squarespace-social-buttons {
+.like-share .other-social-buttons {
   display: inline-block;
   margin-right: .5em;
 }
-.like-share .squarespace-social-buttons .ss-social-button-icon {
+.like-share .other-social-buttons .ss-social-button-icon {
   float: none;
   display: inline-block;
   vertical-align: middle;
@@ -4173,50 +4068,50 @@ body.squarespace-config .sqs-layout .sqs-row [class*=sqs-col-] .sqs-block {
 .view-list .sqs-comment-link.no-comments a:after {
   content: "Leave a Comment";
 }
-.view-item #comments-wrapper .squarespace-comments {
+.view-item #comments-wrapper .other-comments {
   border-top: 1px solid #e3e3e3;
   margin-top: 3em;
   padding-top: 1em;
 }
-.view-item #comments-wrapper .squarespace-comments .header-controls .controls {
+.view-item #comments-wrapper .other-comments .header-controls .controls {
   height: auto;
   padding-bottom: 1em;
 }
-.view-item #comments-wrapper .squarespace-comments .new-comment-area {
+.view-item #comments-wrapper .other-comments .new-comment-area {
   margin-bottom: 1em;
 }
-.view-item #comments-wrapper .squarespace-comments .comments-content .comment-list .comment {
+.view-item #comments-wrapper .other-comments .comments-content .comment-list .comment {
   margin-top: 1em;
   margin-bottom: 0;
 }
-.view-item #comments-wrapper .squarespace-comments .comments-content .comment-list .comment .comment-header {
+.view-item #comments-wrapper .other-comments .comments-content .comment-list .comment .comment-header {
   padding-bottom: 0.5em;
 }
-.view-item #comments-wrapper .squarespace-comments .comments-content .comment-list .comment .comment-header .user-info .author {
+.view-item #comments-wrapper .other-comments .comments-content .comment-list .comment .comment-header .user-info .author {
   font-size: inherit;
 }
-.view-item #comments-wrapper .squarespace-comments .comments-content .comment-list .comment .comment-body p {
+.view-item #comments-wrapper .other-comments .comments-content .comment-list .comment .comment-body p {
   margin: 0;
 }
-.view-item #comments-wrapper .squarespace-comments .comments-content .comment-list .comment:not(:first-of-type) {
+.view-item #comments-wrapper .other-comments .comments-content .comment-list .comment:not(:first-of-type) {
   border-top: 1px solid #e3e3e3;
 }
-.view-item #comments-wrapper .squarespace-comments .comments-content .comment-list .comment:first-of-type {
+.view-item #comments-wrapper .other-comments .comments-content .comment-list .comment:first-of-type {
   margin-top: 0;
 }
 /* TOUCH DEVICE
------------------------------------------------*/html.touch .squarespace-comments .comments-content .comment-list .comment .comment-header .controls .squarespace-comment-buttons .comment-control {
+-----------------------------------------------*/html.touch .other-comments .comments-content .comment-list .comment .comment-header .controls .other-comment-buttons .comment-control {
   opacity: 1;
 }
 /* MEDIA QUERIES
 -----------------------------------------------*/@media screen and (max-width: 480px) {
-  .view-item .squarespace-comments .header-controls .controls .comment-sort {
+  .view-item .other-comments .header-controls .controls .comment-sort {
     margin-left: 0;
     padding: .5em 0;
   }
-  .view-item .squarespace-comments .header-controls .controls .subscribe,
-  .view-item .squarespace-comments .header-controls .controls .unsubscribe,
-  .view-item .squarespace-comments .header-controls .controls .comment-sort {
+  .view-item .other-comments .header-controls .controls .subscribe,
+  .view-item .other-comments .header-controls .controls .unsubscribe,
+  .view-item .other-comments .header-controls .controls .comment-sort {
     display: block;
   }
 }
@@ -4302,7 +4197,7 @@ body.squarespace-config .sqs-layout .sqs-row [class*=sqs-col-] .sqs-block {
   margin-left: .25em;
 }
 .collection-type-blog .article-wrapper .content .title .passthrough-icon:before {
-  font-family: 'squarespace-ui-font';
+  font-family: 'other-ui-font';
   font-style: normal;
   speak: none;
   font-weight: normal;
@@ -4465,7 +4360,7 @@ body.squarespace-config .sqs-layout .sqs-row [class*=sqs-col-] .sqs-block {
 .collection-type-blog.blog-post-comments-show #comments-wrapper #show-comments {
   display: none;
 }
-.collection-type-blog.blog-post-comments-show-on-click #comments-wrapper .squarespace-comments {
+.collection-type-blog.blog-post-comments-show-on-click #comments-wrapper .other-comments {
   margin: 0;
   padding: 0;
   max-height: 0;
@@ -4480,7 +4375,7 @@ body.squarespace-config .sqs-layout .sqs-row [class*=sqs-col-] .sqs-block {
   -moz-transition: opacity 0.2s ease-out;
   transition: opacity 0.2s ease-out;
 }
-.collection-type-blog.blog-post-comments-show-on-click #comments-wrapper .squarespace-comments.show {
+.collection-type-blog.blog-post-comments-show-on-click #comments-wrapper .other-comments.show {
   padding-top: 1em;
   margin-bottom: 1em;
   opacity: 1;
@@ -4867,7 +4762,7 @@ body.squarespace-config .sqs-layout .sqs-row [class*=sqs-col-] .sqs-block {
   }
 }
 /*
- * SQUARESPACE 6
+ * other 6
  * Sixth Iteration
  *
  * @designer davy, billy, stephen
@@ -6709,11 +6604,11 @@ body {
   margin-top: 20px;
   margin-bottom: 10px;
 }
-#footerWrapper .this-is-squarespace {
+#footerWrapper .this-is-other {
   text-align: center;
   background: #181818;
 }
-#footerWrapper .this-is-squarespace p {
+#footerWrapper .this-is-other p {
   margin: 0;
   padding: 50px 0;
   color: #4d4d4d;
@@ -6722,24 +6617,24 @@ body {
   letter-spacing: 1px;
   font-size: 12px;
 }
-#footerWrapper .this-is-squarespace p img {
+#footerWrapper .this-is-other p img {
   margin: 0 20px;
 }
-#footerWrapper .this-is-squarespace p .before,
-#footerWrapper .this-is-squarespace p .after {
+#footerWrapper .this-is-other p .before,
+#footerWrapper .this-is-other p .after {
   width: 200px;
   display: inline-block;
 }
-#footerWrapper .this-is-squarespace p .before.before,
-#footerWrapper .this-is-squarespace p .after.before {
+#footerWrapper .this-is-other p .before.before,
+#footerWrapper .this-is-other p .after.before {
   text-align: right;
 }
-#footerWrapper .this-is-squarespace p .before.after,
-#footerWrapper .this-is-squarespace p .after.after {
+#footerWrapper .this-is-other p .before.after,
+#footerWrapper .this-is-other p .after.after {
   text-align: left;
 }
-#footerWrapper .this-is-squarespace .squarespace-logo {
-  background-image: url('/assets/squarespace-logo-square.png');
+#footerWrapper .this-is-other .other-logo {
+  background-image: url('/assets/other-logo-square.png');
   width: 35px;
   height: 28px;
   display: inline-block;
@@ -6760,11 +6655,11 @@ body.not-found-page #footerWrapper .footer,
 body.collection-layout-developers #footerWrapper .footer,
 body.collection-5069a68cc4aa0cd6a868a204 #footerWrapper .footer,
 body.collection-506ca5ee84aead5098d48c5f #footerWrapper .footer,
-body.footer-style-light #footerWrapper .this-is-squarespace,
-body.not-found-page #footerWrapper .this-is-squarespace,
-body.collection-layout-developers #footerWrapper .this-is-squarespace,
-body.collection-5069a68cc4aa0cd6a868a204 #footerWrapper .this-is-squarespace,
-body.collection-506ca5ee84aead5098d48c5f #footerWrapper .this-is-squarespace {
+body.footer-style-light #footerWrapper .this-is-other,
+body.not-found-page #footerWrapper .this-is-other,
+body.collection-layout-developers #footerWrapper .this-is-other,
+body.collection-5069a68cc4aa0cd6a868a204 #footerWrapper .this-is-other,
+body.collection-506ca5ee84aead5098d48c5f #footerWrapper .this-is-other {
   background: white;
 }
 body.footer-style-light #footerWrapper .footer h1,
@@ -6810,18 +6705,18 @@ body.collection-5069a68cc4aa0cd6a868a204 #footerWrapper .footer .privacy,
 body.collection-506ca5ee84aead5098d48c5f #footerWrapper .footer .privacy {
   opacity: 0.5;
 }
-body.footer-style-light #footerWrapper .this-is-squarespace .squarespace-logo,
-body.not-found-page #footerWrapper .this-is-squarespace .squarespace-logo,
-body.collection-layout-developers #footerWrapper .this-is-squarespace .squarespace-logo,
-body.collection-5069a68cc4aa0cd6a868a204 #footerWrapper .this-is-squarespace .squarespace-logo,
-body.collection-506ca5ee84aead5098d48c5f #footerWrapper .this-is-squarespace .squarespace-logo {
-  background-image: url('/assets/squarespace-logo-square-dark.png');
+body.footer-style-light #footerWrapper .this-is-other .other-logo,
+body.not-found-page #footerWrapper .this-is-other .other-logo,
+body.collection-layout-developers #footerWrapper .this-is-other .other-logo,
+body.collection-5069a68cc4aa0cd6a868a204 #footerWrapper .this-is-other .other-logo,
+body.collection-506ca5ee84aead5098d48c5f #footerWrapper .this-is-other .other-logo {
+  background-image: url('/assets/other-logo-square-dark.png');
 }
-body.footer-style-light #footerWrapper .this-is-squarespace p,
-body.not-found-page #footerWrapper .this-is-squarespace p,
-body.collection-layout-developers #footerWrapper .this-is-squarespace p,
-body.collection-5069a68cc4aa0cd6a868a204 #footerWrapper .this-is-squarespace p,
-body.collection-506ca5ee84aead5098d48c5f #footerWrapper .this-is-squarespace p {
+body.footer-style-light #footerWrapper .this-is-other p,
+body.not-found-page #footerWrapper .this-is-other p,
+body.collection-layout-developers #footerWrapper .this-is-other p,
+body.collection-5069a68cc4aa0cd6a868a204 #footerWrapper .this-is-other p,
+body.collection-506ca5ee84aead5098d48c5f #footerWrapper .this-is-other p {
   color: #ababab;
 }
 body.collection-5069a68cc4aa0cd6a868a204 #canvasWrapper.unloading,
