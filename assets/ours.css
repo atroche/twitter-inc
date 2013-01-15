@@ -103,13 +103,15 @@ p.right-content {
 }
 
 #falls-caption {
-  margin-top: 100px;
+  margin-top: 130px;
   position: relative;
   left: 20%;
-  font-size: 2em;
+  font-size: 16pt;
   line-height: 1.3em;
   text-align: center;
   width: 60%;
+  font-style: italic;
+  font-family: serif;
 }
 
 /*
@@ -119,20 +121,25 @@ p.right-content {
 }
 */
 #endorsement {
+  font-family: serif;
   margin-top: 150px;
-  font-size: 20pt;
-  font-weight: bold;
+  font-size: 16pt;
   font-style: italic;
-  color: #222;
+  color: #777;
   line-height: 1.3em;
+  width: 60%;
+  position: relative;
+  left: 20%;
 }
 
 
 #endorsement small {
-  font-size: 14pt;
-  color: #222;
+  font-size: 8pt;
   font-style: normal;
-  margin-top: 40px;
+  margin-top: 20px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 #endorsement img {
@@ -202,6 +209,8 @@ ul#features {
   list-style: none;
   text-transform: uppercase;
   text-align: center;
+  font-weight: bold;
+  margin-top: 0px;
 }
 
 div#price {
@@ -209,7 +218,7 @@ div#price {
   font-style: italic;
   font-size: 3em;
   font-family: serif;
-  line-height: 1em;
+  line-height: .6em;
   font-weight: bold;
   color: black;
   text-align: center;
@@ -226,6 +235,8 @@ p#will-contact {
   margin-top: 100px;
   position: relative;
   top: 50px;
+  font-family: serif;
+  font-style: italic;
 }
 
 #get-started-now {
@@ -236,6 +247,7 @@ p#will-contact {
   padding: 0px 20px 0px 20px;
   background-color: #62DAEB;
   font-style: normal;
+  margin-top: 1em;
 }
 
 div.last {
@@ -263,18 +275,18 @@ div.last h1 {
 
 
 #get-started-modal {
-
-     width: 404px;
-     padding: 2em;
+    width: 404px;
+    padding: 3em 4em 4em 4em;
     display:none;
-
-
     background: #FFF;
-        border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
-        box-shadow: 0px 0px 4px rgba(0,0,0,0.7); -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.7); -moz-box-shadow: 0 0px 4px rgba(0,0,0,0.7);
-
+    border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.7); -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.7); -moz-box-shadow: 0 0px 4px rgba(0,0,0,0.7);
 }
 
+#get-started-modal h1 {
+  font-size: 24pt;
+  margin-bottom: 40px;
+}
 
 
 .modal_close { position: absolute; top: 12px; right: 12px; display: block; width: 14px; height: 14px; background: url(http://leanmodal.finelysliced.com.au/img/modal_close.png); z-index: 2; }
