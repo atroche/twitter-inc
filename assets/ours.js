@@ -30,6 +30,14 @@ $(function(){
 
     $("#get-started-top").leanModal({closeButton: ".modal_close"});
     $("#get-started-now").leanModal({closeButton: ".modal_close"});
+
+    var focusOnEmailInput = function(){
+      $('input[name=email]').focus();
+    };
+
+    $("#get-started-now").click(focusOnEmailInput);
+    $("#get-started-top").click(focusOnEmailInput);
+
     $('form#email').submit(function(e){
         e.preventDefault();
         var emailInput = $(this).find('input[name=email]');
