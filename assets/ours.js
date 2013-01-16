@@ -1,6 +1,10 @@
 $(function(){
 
+    mixpanel.track("Visit");
+
+
     var apiUrl = "http://twitterinc.herokuapp.com";
+    // var apiUrl = "http://localhost:5000";
 
     var $start = $('#start'),
         start = $start.get(0),
@@ -35,10 +39,17 @@ $(function(){
       $('input[name=email]').focus();
     };
 
+    var clickedGetStarted = function(){
+      mixpanel.track("Clicked Get Started");
+      focusOnEmailInput();
+
+    };
+
     $("#get-started-now").click(focusOnEmailInput);
     $("#get-started-top").click(focusOnEmailInput);
 
     $('form#email').submit(function(e){
+        mixpanel.track("Clicked Next");
         e.preventDefault();
         var emailInput = $(this).find('input[name=email]');
         var newEmail = emailInput.val();
@@ -61,9 +72,20 @@ $(function(){
           }
         });
 
+        mixpanel.identify(newEmail);
+        mixpanel.people.set({
+          "$email": newEmail
+        });
+
         emailInput.val('');
 
         $('#get-started-modal').html($('#next-modal').html());
+        $('form#paypal').click(function(){
+          mixpanel.track("Clicked PayPal button", {}, function(){
+            $('form#paypal').submit();
+          });
+          return false;
+        });
 
         return false;
     });
@@ -73,14 +95,19 @@ $(function(){
       $('form#email').submit();
     });
 
-
     if (window.location.hash === "#success") {
+      mixpanel.track("Redirected back from PayPal");
       $.ambiance({message: "Check your email for further details.",
                   title: "Thanks!",
                   type: "success",
                   permanent: true});
 
       $.post(apiUrl + "/success");
+
+      mixpanel.people.set({
+        "bought": true,
+        "$lastVisit": new Date()
+      });
     }
 
 });
