@@ -1,6 +1,6 @@
 $(function(){
 
-    var apiKey = "http://twitterinc.herokuapp.com";
+    var apiUrl = "http://twitterinc.herokuapp.com";
 
     var $start = $('#start'),
         start = $start.get(0),
