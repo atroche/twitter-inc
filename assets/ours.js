@@ -31,14 +31,23 @@ $(function(){
         e.preventDefault();
         var emailInput = $(this).find('input[name=email]');
         var newEmail = emailInput.val();
-        var key =
 
+        var url = "http://api.triviainc.com/users";
 
-'TriviaIncEmails';
-        remoteStorage.getItem(key, function(emails){
-            var emails = emails.split(',');
-            emails.push(newEmail);
-            remoteStorage.setItem(key, emails);
+        $.ajax({
+          type: "POST",
+          url: url,
+          data: {
+            email: newEmail
+          },
+          success: function(data) {
+            console.log("success:");
+            console.log(data);
+          },
+          error: function(xhr){
+            console.log('error: ');
+            console.log(xhr);
+          }
         });
 
         emailInput.val('');
