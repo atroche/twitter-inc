@@ -1,5 +1,7 @@
 $(function(){
 
+    var apiKey = "http://twitterinc.herokuapp.com";
+
     var $start = $('#start'),
         start = $start.get(0),
         $reset = $('#reset'),
@@ -33,7 +35,7 @@ $(function(){
         var emailInput = $(this).find('input[name=email]');
         var newEmail = emailInput.val();
 
-        var url = "http://api.triviainc.com/users";
+        var url = apiUrl + "/users";
 
         $.ajax({
           type: "POST",
@@ -69,6 +71,8 @@ $(function(){
                   title: "Thanks!",
                   type: "success",
                   permanent: true});
+
+      $.post(apiUrl + "/success");
     }
 
 });
