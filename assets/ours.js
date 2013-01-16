@@ -1,4 +1,5 @@
 $(function(){
+
     var $start = $('#start'),
         start = $start.get(0),
         $reset = $('#reset'),
@@ -52,15 +53,23 @@ $(function(){
 
         emailInput.val('');
 
-        $('#lean_overlay').hide();
-        $("#get-started-modal").hide();
-        $.ambiance({message: "We'll be in touch shortly.",
-                    title: "Thanks!",
-                    type: "success",
-                    permanent: true});
+        $('#get-started-modal').html($('#next-modal').html());
+
         return false;
     });
-    // $('#submit-email').parent().clicksubmit();
+
+    // For clicking the next button:
+    $('#submit-email').click(function(){
+      $('form#email').submit();
+    });
+
+
+    if (window.location.hash === "#success") {
+      $.ambiance({message: "Check your email for further details.",
+                  title: "Thanks!",
+                  type: "success",
+                  permanent: true});
+    }
 
 });
 
