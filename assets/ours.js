@@ -3,7 +3,7 @@ $(function(){
     mixpanel.track("Visit");
 
 
-    var apiUrl = "http://twitterinc.herokuapp.com";
+    var apiUrl = "http://api.triviainc.com";
     // var apiUrl = "http://localhost:5000";
 
     var $start = $('#start'),
