@@ -4952,7 +4952,7 @@ body.collection-layout-site-secondary .main-content-wrapper {
   width: 960px;
   text-align: center;
   margin: auto;
-  padding-top: 175px;
+  padding-top: 215px;
   position: relative;
   z-index: 100;
 }
@@ -4976,7 +4976,7 @@ body.collection-layout-site-secondary .main-content-wrapper {
 #hero header h1:before {
   content: ' ';
   display: block;
-  width: 304px;
+  width: 250px;
   margin: 0 auto 20px;
   height: 5px;
   background: white;
@@ -5251,7 +5251,7 @@ body.collection-layout-site-secondary .main-content-wrapper {
 #mainContent #tour .tour-row article.blogs .col-third h2.centered-fettuccine:after,
 #mainContent #tour .tour-row article.social .details h2.centered-fettuccine:after {
   left: 50%;
-  margin-left: -152px;
+  margin-left: -53px;
 }
 #mainContent #tour .tour-row article.half header h1,
 #mainContent #tour .tour-row article.comments header h1,
