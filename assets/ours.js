@@ -45,8 +45,8 @@ $(function(){
 
     };
 
-    $("#get-started-now").click(focusOnEmailInput);
-    $("#get-started-top").click(focusOnEmailInput);
+    $("#get-started-now").click(clickedGetStarted);
+    $("#get-started-top").click(clickedGetStarted);
 
     $('form#email').submit(function(e){
         mixpanel.track("Clicked Next");
